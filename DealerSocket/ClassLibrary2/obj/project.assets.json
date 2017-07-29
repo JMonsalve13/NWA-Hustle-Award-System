@@ -7065,9 +7065,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Hackathons\\NWA-Hustle-Award-System\\DealerSocket\\ClassLibrary2\\Back End.csproj",
-      "projectName": "Back End",
-      "projectPath": "E:\\Hackathons\\NWA-Hustle-Award-System\\DealerSocket\\ClassLibrary2\\Back End.csproj",
+      "projectUniqueName": "E:\\Hackathons\\NWA-Hustle-Award-System\\DealerSocket\\ClassLibrary2\\BackEnd.csproj",
+      "projectName": "BackEnd",
+      "projectPath": "E:\\Hackathons\\NWA-Hustle-Award-System\\DealerSocket\\ClassLibrary2\\BackEnd.csproj",
       "outputPath": "E:\\Hackathons\\NWA-Hustle-Award-System\\DealerSocket\\ClassLibrary2\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
