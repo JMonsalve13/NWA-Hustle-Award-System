@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NWA.HustleCards.BackEnd
 {
-    public struct Person
+    public class Person
     {
         private string firstName;
         private string lastName;
