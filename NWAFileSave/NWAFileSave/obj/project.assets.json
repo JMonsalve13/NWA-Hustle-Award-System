@@ -7042,10 +7042,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\dylan shoupe\\documents\\visual studio 2017\\Projects\\NWAFileSave\\NWAFileSave\\NWAFileSave.csproj",
+      "projectUniqueName": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\NWAFileSave\\NWAFileSave\\NWAFileSave.csproj",
       "projectName": "NWAFileSave",
-      "projectPath": "c:\\users\\dylan shoupe\\documents\\visual studio 2017\\Projects\\NWAFileSave\\NWAFileSave\\NWAFileSave.csproj",
-      "outputPath": "c:\\users\\dylan shoupe\\documents\\visual studio 2017\\Projects\\NWAFileSave\\NWAFileSave\\obj\\",
+      "projectPath": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\NWAFileSave\\NWAFileSave\\NWAFileSave.csproj",
+      "outputPath": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\NWAFileSave\\NWAFileSave\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

@@ -1,0 +1,11 @@
+C:\Users\Dylan Shoupe\Documents\GitHub\NWA-Hustle-Award-System\NWAFileSave\TestConsoleApp\bin\Debug\netcoreapp1.1\TestConsoleApp.deps.json
+C:\Users\Dylan Shoupe\Documents\GitHub\NWA-Hustle-Award-System\NWAFileSave\TestConsoleApp\bin\Debug\netcoreapp1.1\TestConsoleApp.runtimeconfig.json
+C:\Users\Dylan Shoupe\Documents\GitHub\NWA-Hustle-Award-System\NWAFileSave\TestConsoleApp\bin\Debug\netcoreapp1.1\TestConsoleApp.runtimeconfig.dev.json
+C:\Users\Dylan Shoupe\Documents\GitHub\NWA-Hustle-Award-System\NWAFileSave\TestConsoleApp\bin\Debug\netcoreapp1.1\TestConsoleApp.dll
+C:\Users\Dylan Shoupe\Documents\GitHub\NWA-Hustle-Award-System\NWAFileSave\TestConsoleApp\bin\Debug\netcoreapp1.1\TestConsoleApp.pdb
+C:\Users\Dylan Shoupe\Documents\GitHub\NWA-Hustle-Award-System\NWAFileSave\TestConsoleApp\bin\Debug\netcoreapp1.1\NWAFileSave.dll
+C:\Users\Dylan Shoupe\Documents\GitHub\NWA-Hustle-Award-System\NWAFileSave\TestConsoleApp\bin\Debug\netcoreapp1.1\NWAFileSave.pdb
+C:\Users\Dylan Shoupe\Documents\GitHub\NWA-Hustle-Award-System\NWAFileSave\TestConsoleApp\obj\Debug\netcoreapp1.1\TestConsoleApp.csprojResolveAssemblyReference.cache
+C:\Users\Dylan Shoupe\Documents\GitHub\NWA-Hustle-Award-System\NWAFileSave\TestConsoleApp\obj\Debug\netcoreapp1.1\TestConsoleApp.AssemblyInfo.cs
+C:\Users\Dylan Shoupe\Documents\GitHub\NWA-Hustle-Award-System\NWAFileSave\TestConsoleApp\obj\Debug\netcoreapp1.1\TestConsoleApp.dll
+C:\Users\Dylan Shoupe\Documents\GitHub\NWA-Hustle-Award-System\NWAFileSave\TestConsoleApp\obj\Debug\netcoreapp1.1\TestConsoleApp.pdb

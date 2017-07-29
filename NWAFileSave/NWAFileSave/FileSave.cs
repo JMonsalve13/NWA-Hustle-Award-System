@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.IO.Compression;
+using System.Text.RegularExpressions;
 
 namespace NWA.HustleCards.Persistance
 {
@@ -8,54 +9,79 @@ namespace NWA.HustleCards.Persistance
     {
         private FileStream fs;
 
-        public bool WriteFile(string fileName, string CSV)
+        public bool WriteFile(string path, string fileName, string data)
         {
             //Overwrite or create a CSV file from the folder structure
             //Returns if it successfully ran
-            if (!File.Exists(fileName))
+
+            string fullPath = $"{path}\\{fileName}.CSV";
+            if (!File.Exists(fullPath))
             {
-                File.Create(fileName);
+                File.Create(fullPath);
             }
             else
             {
-                File.WriteAllText(fileName, CSV);
+                File.WriteAllText(fullPath, data);
             }
-            throw new NotImplementedException();
+            return true;
         }
 
-        public bool TryRead(string fileName, out string CSV)
+        public bool TryRead(string path, out string CSV)
         {
             //Get the CSV from the folder structure and turn it into a string
             //Returns if it successfully ran
-            if (!File.Exists(fileName))
+            if (!File.Exists(path))
             {
-                throw new FileNotFoundException("The file does not exist");
+                CSV = "";
+                return false;
             }
             else
             {
-                string test = File.ReadAllText(fileName);
+                CSV = "";
+                string[] lines = File.ReadAllLines(path);
+                for(int i = 0; i < lines.Length; i++)
+                {
+                    if (i < lines.Length - 1)
+                    {
+                        CSV += lines[i] + ",";
+                    }
+                    else
+                    {
+                        CSV += lines[i];
+                    }
+                }
+                CSV = Regex.Replace(CSV, @"\s+", "");
+                return true;
             }
-            throw new NotImplementedException();
         }
 
         public bool AddImage(string fileName, byte[] photo)
         {
             //Get an image from the database and add it to the folder structure
             //Returns if it successfully ran
+            string test = Convert.ToBase64String(photo);
             throw new NotImplementedException();
         }
 
         public void Save()
         {
+            string path = Environment.ExpandEnvironmentVariables("%AppData%\\NWATemp");
+            string savePath = Environment.ExpandEnvironmentVariables("%AppData%");
+            Console.WriteLine(path);
+            Console.WriteLine(savePath);
+
             //Zip up all the new files and overwrite the old file structure as a .NWA extension
-            if (!File.Exists("\\AppData\\Roaming\\"))
+            if (!Directory.Exists(path))
             {
-                Directory.CreateDirectory("");
-                ZipFile.CreateFromDirectory(/*Source*/"",/*Destination*/ ".MWA");
+                Directory.CreateDirectory(path);
+                
+                ZipFile.CreateFromDirectory(path, savePath);
+                Path.ChangeExtension(path + ".zip", ".NWA");
             }
             else
             {
-                ZipFile.CreateFromDirectory(/*Source*/"",/*Destination*/ ".MWA");
+                ZipFile.CreateFromDirectory(path, savePath);
+                //Path.ChangeExtension(path + ".zip", ".NWA");
             }
         }
     }
