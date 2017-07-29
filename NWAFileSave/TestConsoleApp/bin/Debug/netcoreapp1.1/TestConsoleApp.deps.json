@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v1.1",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v1.1": {
+      "testconsoleapp/1.0.0": {
+        "dependencies": {
+          "NWAFileSave": "1.0.0"
+        },
+        "runtime": {
+          "TestConsoleApp.dll": {}
+        }
+      },
+      "nwafilesave/1.0.0": {
+        "runtime": {
+          "NWAFileSave.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "testconsoleapp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "nwafilesave/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -2266,6 +2266,13 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "NWAFileSave/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.1",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.1.2"
+        }
       }
     }
   },
@@ -7029,11 +7036,17 @@
         "system.xml.xpath.xdocument.4.0.1.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "NWAFileSave/1.0.0": {
+      "type": "project",
+      "path": "../NWAFileSave/NWAFileSave.csproj",
+      "msbuildProject": "../NWAFileSave/NWAFileSave.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v1.1": [
-      "Microsoft.NETCore.App >= 1.1.2"
+      "Microsoft.NETCore.App >= 1.1.2",
+      "NWAFileSave >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7042,17 +7055,21 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\DealerSocket\\MiscellaneousAssistantFunctions\\MiscellaneousAssistantFunctions.csproj",
-      "projectName": "MiscellaneousAssistantFunctions",
-      "projectPath": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\DealerSocket\\MiscellaneousAssistantFunctions\\MiscellaneousAssistantFunctions.csproj",
-      "outputPath": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\DealerSocket\\MiscellaneousAssistantFunctions\\obj\\",
+      "projectUniqueName": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\NWAFileSave\\TestConsoleApp\\TestConsoleApp.csproj",
+      "projectName": "TestConsoleApp",
+      "projectPath": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\NWAFileSave\\TestConsoleApp\\TestConsoleApp.csproj",
+      "outputPath": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\NWAFileSave\\TestConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
       ],
       "frameworks": {
         "netcoreapp1.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\NWAFileSave\\NWAFileSave\\NWAFileSave.csproj": {
+              "projectPath": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\NWAFileSave\\NWAFileSave\\NWAFileSave.csproj"
+            }
+          }
         }
       }
     },

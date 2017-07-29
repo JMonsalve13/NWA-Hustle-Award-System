@@ -7042,10 +7042,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\DealerSocket\\MiscellaneousAssistantFunctions\\MiscellaneousAssistantFunctions.csproj",
-      "projectName": "MiscellaneousAssistantFunctions",
-      "projectPath": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\DealerSocket\\MiscellaneousAssistantFunctions\\MiscellaneousAssistantFunctions.csproj",
-      "outputPath": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\DealerSocket\\MiscellaneousAssistantFunctions\\obj\\",
+      "projectUniqueName": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\NWAFileSave\\NWAFileSave\\NWAFileSave.csproj",
+      "projectName": "NWAFileSave",
+      "projectPath": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\NWAFileSave\\NWAFileSave\\NWAFileSave.csproj",
+      "outputPath": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\NWAFileSave\\NWAFileSave\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

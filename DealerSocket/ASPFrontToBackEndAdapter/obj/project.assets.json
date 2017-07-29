@@ -9770,15 +9770,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Patrick Conner\\.nuget\\packages\\": {}
+    "C:\\Users\\Dylan Shoupe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Hackathons\\NWA-Hustle-Award-System\\DealerSocket\\ASPFrontToBackEndAdapter\\ASPFrontToBackEndAdapter.csproj",
+      "projectUniqueName": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\DealerSocket\\ASPFrontToBackEndAdapter\\ASPFrontToBackEndAdapter.csproj",
       "projectName": "ASPFrontToBackEndAdapter",
-      "projectPath": "E:\\Hackathons\\NWA-Hustle-Award-System\\DealerSocket\\ASPFrontToBackEndAdapter\\ASPFrontToBackEndAdapter.csproj",
-      "outputPath": "E:\\Hackathons\\NWA-Hustle-Award-System\\DealerSocket\\ASPFrontToBackEndAdapter\\obj\\",
+      "projectPath": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\DealerSocket\\ASPFrontToBackEndAdapter\\ASPFrontToBackEndAdapter.csproj",
+      "outputPath": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\DealerSocket\\ASPFrontToBackEndAdapter\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
