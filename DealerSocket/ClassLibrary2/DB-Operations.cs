@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Linq;
+using System.Reflection;
 
 namespace NWA.HustleCards.BackEnd
 {
@@ -87,6 +88,24 @@ namespace NWA.HustleCards.BackEnd
 
         }
 
+        private struct UpdateValue<T>
+        {
+            public UpdateValue(string fiel, string val){
+                field = fiel;
+                value = val;
+            }
+
+
+            public string field;
+            public string value;
+
+            public T Update(T obj)
+            {
+                typeof(T).GetField(field).SetValue(obj, value);
+                return obj;
+            }
+        }
+
 
         public Person[] GetPersons(string[] queryParams)
         {
@@ -99,8 +118,8 @@ namespace NWA.HustleCards.BackEnd
 
                    new GenericQuery<Person>(Query.All(), people)
                 };
+                List<UpdateValue<Person>> ups = new List<UpdateValue<Person>>();
 
-                char val = 'a';
                 string column = "";
                 string value = "";
 
@@ -130,7 +149,7 @@ namespace NWA.HustleCards.BackEnd
                     }
                     else if (queryParams[i].Contains("+"))
                     {
-                        val = '+';
+                        ups.Add(new UpdateValue<Person>(column, value));
                     }
                 }
 
@@ -143,6 +162,21 @@ namespace NWA.HustleCards.BackEnd
                     per = per.Where(x => peep.Contains(x));
 
                 }
+
+                if (ups.Count > 0)
+                {
+                    foreach (Person p in per)
+                    {
+                        Person q = p;
+                        foreach (UpdateValue<Person> up in ups)
+                        {
+                            q = up.Update(q);
+                        }
+                        DeletePerson(p);
+                        AddPerson(q);
+                    }
+                }
+
                 return per.ToArray();
             };
         }
