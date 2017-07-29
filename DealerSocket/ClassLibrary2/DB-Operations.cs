@@ -122,7 +122,7 @@ namespace NWA.HustleCards.BackEnd
                     }
                     else if (queryParams[i].Contains(">"))
                     {
-                        GenericQuery<Person> x = new GenericQuery<Person>(Query.(column, value), people);
+                        GenericQuery<Person> x = new GenericQuery<Person>(Query.EQ(column.Skip(column.Length - value.Length).ToString(), value), people);
                     }
                     else if (queryParams[i].Contains("|"))
                     {
@@ -131,36 +131,6 @@ namespace NWA.HustleCards.BackEnd
                     else if (queryParams[i].Contains("+"))
                     {
                         val = '+';
-                    }
-
-
-
-
-
-
-                    if (val.Equals('='))
-                    {
-                        // Exact
-
-                    }
-                    else if (val.Equals("<"))
-                    {
-                        // Start with
-                        // personToAdd = people.FindOne();
-                    }
-                    else if (val.Equals(">"))
-                    {
-                        // Ends with
-                        // personToAdd = people.FindOne();
-                    }
-                    else if (val.Equals("|"))
-                    {
-                        // Update
-                        // personToAdd = people.FindOne();
-                    }
-                    else if (val.Equals("+"))
-                    {
-
                     }
                 }
 
