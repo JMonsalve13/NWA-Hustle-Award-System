@@ -17,7 +17,7 @@ namespace HustleCardsServer.Controllers
         public IActionResult Get()
         {
             string[] qs = EasyQueary.ConvertQueary(HttpContext.Request.Query, false);
-            return Ok(/*Backend.GetDepartments(qs)*/);
+            return Ok(DB_Operations.GetDepartments(qs));
         }
 
         // POST api/values
@@ -27,7 +27,7 @@ namespace HustleCardsServer.Controllers
             Department p = default(Department);
             string[] quearyParams = HttpContext.Request.Query["create"].ToString().Split('(', ')', ',');
             p = EasyQueary.ReflectionUpdate(p, quearyParams);
-            /*BackEnd.AddDepartment(p);*/
+            DB_Operations.AddDepartment(p);
             return Ok("Added Prize!");
         }
 
@@ -36,7 +36,7 @@ namespace HustleCardsServer.Controllers
         public IActionResult Put()
         {
             string[] qs = EasyQueary.ConvertQueary(HttpContext.Request.Query, true);
-            return Ok(/*Backend.GetDepartments(qs)*/);
+            return Ok(DB_Operations.GetDepartments(qs));
         }
 
         // DELETE api/values/5
@@ -45,10 +45,10 @@ namespace HustleCardsServer.Controllers
         {
             int count = 0;
             string[] qs = EasyQueary.ConvertQueary(HttpContext.Request.Query, false);
-            Department[] ps = null/*Backend.GetPrizes(qs)*/;
+            Department[] ps = DB_Operations.GetDepartments(qs);
             foreach (Department p in ps)
             {
-                /*Backend.DeleteDepartment(p);*/
+                DB_Operations.DeleteDepartment(p);
                 count++;
             }
             return Ok($"deleted {count} Departments");

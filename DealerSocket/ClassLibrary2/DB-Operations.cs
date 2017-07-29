@@ -8,9 +8,9 @@ using System.Reflection;
 
 namespace NWA.HustleCards.BackEnd
 {
-    class DB_Operations
+    public static class DB_Operations
     {
-        public void SelectAll()
+        public static void SelectAll()
         {
 
             using (var db = new LiteDatabase("HustleCards"))
@@ -52,15 +52,12 @@ namespace NWA.HustleCards.BackEnd
             }
         }
 
-        public void AddCard(HustleCard card)
+        public static void AddCard(HustleCard card)
         {
-
-
             using (var db = new LiteDatabase("HustleCards"))
             {
                 var cards = db.GetCollection<HustleCard>("HustleCards");
-                // now we can carry out CRUD operations on the data
-
+                
                 cards.Insert(new HustleCard
                 {
                     PersonID = card.PersonID,
@@ -72,14 +69,16 @@ namespace NWA.HustleCards.BackEnd
                     Date = card.Date,
                     ReasonForCard = card.ReasonForCard
                 });
-
             }
         }
-        public void DeleteCard(HustleCard p)
+        public static void DeleteCard(HustleCard p)
         {
-
-        }
-        public HustleCard[] GetCards(string[] queryParams)
+            using (var db = new LiteDatabase("HustleCards"))
+            {
+                var cards = db.GetCollection<HustleCard>("HustleCards");
+                
+            }
+        public static HustleCard[] GetCards(string[] queryParams)
         {
 
             using (var db = new LiteDatabase("Cards.db"))
@@ -155,7 +154,7 @@ namespace NWA.HustleCards.BackEnd
             };
         }
 
-        public void AddDepartment(Department p)
+        public static void AddDepartment(Department p)
         {
             using (var db = new LiteDatabase("Departments.db"))
             {
@@ -165,11 +164,11 @@ namespace NWA.HustleCards.BackEnd
                 people.Insert(null);
             }
         }
-        public void DeleteDepartment(Department p)
+        public static void DeleteDepartment(Department p)
         {
 
         }
-        public Department[] GetDepartments(string[] queryParams)
+        public static Department[] GetDepartments(string[] queryParams)
         {
 
             using (var db = new LiteDatabase("Prizes.db"))
@@ -245,7 +244,7 @@ namespace NWA.HustleCards.BackEnd
             };
         }
         
-        public void AddPrize(Prize p)
+        public static void AddPrize(Prize p)
         {
             using (var db = new LiteDatabase("Prizes.db"))
             {
@@ -255,11 +254,11 @@ namespace NWA.HustleCards.BackEnd
                 people.Insert(null);
             }
         }
-        public void DeletePrize(Prize p)
+        public static void DeletePrize(Prize p)
         {
 
         }
-        public Prize[] GetPrizes(string[] queryParams)
+        public static Prize[] GetPrizes(string[] queryParams)
         {
 
             using (var db = new LiteDatabase("Prizes.db"))
@@ -335,7 +334,7 @@ namespace NWA.HustleCards.BackEnd
             };
         }
 
-        public void AddLocation(Location p)
+        public static void AddLocation(Location p)
         {
             using (var db = new LiteDatabase("Locations.db"))
             {
@@ -345,11 +344,11 @@ namespace NWA.HustleCards.BackEnd
                 people.Insert(null);
             }
         }
-        public void DeleteLocation(Location p)
+        public static void DeleteLocation(Location p)
         {
 
         }
-        public Location[] GetLocations(string[] queryParams)
+        public static Location[] GetLocations(string[] queryParams)
         {
 
             using (var db = new LiteDatabase("Locations.db"))
@@ -425,7 +424,7 @@ namespace NWA.HustleCards.BackEnd
             };
         }
 
-        public void AddPerson(Person p)
+        public static void AddPerson(Person p)
         {
             using (var db = new LiteDatabase("People.db"))
             {
@@ -445,11 +444,11 @@ namespace NWA.HustleCards.BackEnd
             }
 
         }
-        public void DeletePerson(Person p)
+        public static void DeletePerson(Person p)
         {
 
         }
-        public Person[] GetPersons(string[] queryParams)
+        public static Person[] GetPersons(string[] queryParams)
         {
 
             using (var db = new LiteDatabase("People.db"))

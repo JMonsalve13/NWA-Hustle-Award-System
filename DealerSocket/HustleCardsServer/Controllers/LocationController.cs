@@ -17,7 +17,7 @@ namespace HustleCardsServer.Controllers
         public IActionResult Get()
         {
             string[] qs = EasyQueary.ConvertQueary(HttpContext.Request.Query, false);
-            return Ok(/*Backend.GetLocations(qs)*/);
+            return Ok(DB_Operations.GetLocations(qs));
         }
 
         // POST api/values
@@ -27,7 +27,7 @@ namespace HustleCardsServer.Controllers
             Location p = default(Location);
             string[] quearyParams = HttpContext.Request.Query["create"].ToString().Split('(', ')', ',');
             p = EasyQueary.ReflectionUpdate(p, quearyParams);
-            /*BackEnd.AddLocation(p);*/
+            DB_Operations.AddLocation(p);
             return Ok("Added person!");
         }
 
@@ -36,7 +36,7 @@ namespace HustleCardsServer.Controllers
         public IActionResult Put()
         {
             string[] qs = EasyQueary.ConvertQueary(HttpContext.Request.Query, true);
-            return Ok(/*Backend.GetLocations(qs)*/);
+            return Ok(DB_Operations.GetLocations(qs));
         }
 
         // DELETE api/values/5
@@ -45,10 +45,10 @@ namespace HustleCardsServer.Controllers
         {
             int count = 0;
             string[] qs = EasyQueary.ConvertQueary(HttpContext.Request.Query, false);
-            Location[] ps = null/*Backend.GetLocations(qs)*/;
+            Location[] ps = DB_Operations.GetLocations(qs);
             foreach (Location p in ps)
             {
-                /*Backend.DeleteLocation(p);*/
+                DB_Operations.DeleteLocation(p);
                 count++;
             }
             return Ok($"deleted {count} locations");
