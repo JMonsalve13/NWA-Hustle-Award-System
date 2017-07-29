@@ -1,0 +1,7 @@
+c:\users\dylan shoupe\documents\visual studio 2017\Projects\NWAFileSave\NWAFileSave\bin\Debug\netcoreapp1.1\NWAFileSave.deps.json
+c:\users\dylan shoupe\documents\visual studio 2017\Projects\NWAFileSave\NWAFileSave\bin\Debug\netcoreapp1.1\NWAFileSave.dll
+c:\users\dylan shoupe\documents\visual studio 2017\Projects\NWAFileSave\NWAFileSave\bin\Debug\netcoreapp1.1\NWAFileSave.pdb
+c:\users\dylan shoupe\documents\visual studio 2017\Projects\NWAFileSave\NWAFileSave\obj\Debug\netcoreapp1.1\NWAFileSave.csprojResolveAssemblyReference.cache
+c:\users\dylan shoupe\documents\visual studio 2017\Projects\NWAFileSave\NWAFileSave\obj\Debug\netcoreapp1.1\NWAFileSave.AssemblyInfo.cs
+c:\users\dylan shoupe\documents\visual studio 2017\Projects\NWAFileSave\NWAFileSave\obj\Debug\netcoreapp1.1\NWAFileSave.dll
+c:\users\dylan shoupe\documents\visual studio 2017\Projects\NWAFileSave\NWAFileSave\obj\Debug\netcoreapp1.1\NWAFileSave.pdb
