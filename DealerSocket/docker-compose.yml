@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  aspfronttobackendadapter:
+    image: aspfronttobackendadapter
+    build:
+      context: ./ASPFrontToBackEndAdapter
+      dockerfile: Dockerfile
