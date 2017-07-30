@@ -236,3 +236,12 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 DealerSocket/.vs/HustleAwardSystem_DealerSocket/v15/.suo
+DealerSocket/.vs/HustleAwardSystem_DealerSocket/v15/.suo
+DealerSocket/.vs/HustleAwardSystem_DealerSocket/v15/.suo
+DealerSocket/HustleCardsServer/wwwroot/index.html
+DealerSocket/.vs/HustleAwardSystem_DealerSocket/v15/.suo
+DealerSocket/HustleCardsServer/wwwroot/main.bundle.js
+DealerSocket/HustleCardsServer/wwwroot/inline.bundle.js.map
+DealerSocket/HustleCardsServer/wwwroot/main.bundle.js.map
+*.map
+DealerSocket/HustleCardsServer/wwwroot/styles.bundle.js
