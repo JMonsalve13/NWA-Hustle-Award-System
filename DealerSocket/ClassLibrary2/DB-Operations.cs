@@ -42,15 +42,7 @@ namespace NWA.HustleCards.BackEnd
                 return obj;
             }
         }
-
-
-
-
-
-
-
-
-
+        
         /// <summary>
         /// AddCard() will connect to the HustleCard DB and insert the card passed in, into the DB
         /// </summary>
@@ -64,9 +56,6 @@ namespace NWA.HustleCards.BackEnd
                 cards.Insert(HustleCard.Clone(card));
             }
         }
-
-
-
         /// <summary>
         /// DeleteCard() will connect to the HustCard DB and delete the card specified. 
         /// </summary>
@@ -79,12 +68,6 @@ namespace NWA.HustleCards.BackEnd
          //       cards.Delete(p);
             }
         }
-
-
-
-
-
-
         /// <summary>
         ///     In GetCards(), passing in a string array of queries.
         ///     
@@ -181,17 +164,7 @@ namespace NWA.HustleCards.BackEnd
                 return per.ToArray();
             };
         }
-
-
-
-
-
-
-
-
-
-
-
+       
         /// <summary>
         /// AddDepartment() will connect to Department DB and insert the Department passed in, into the DB
         /// </summary>
@@ -206,7 +179,6 @@ namespace NWA.HustleCards.BackEnd
                 people.Insert(Department.Clone(p));
             }
         }
-
         /// <summary>
         /// DeleteDepartment() will connect to the the departments database and remove the specified department
         /// </summary>
@@ -219,9 +191,6 @@ namespace NWA.HustleCards.BackEnd
        //         departments.Delete(p);
             }
         }
-
-
-
         /// <summary>
         ///     In GetDepartments(), passing in a string array of queries.
         ///     
@@ -243,7 +212,6 @@ namespace NWA.HustleCards.BackEnd
         /// </summary>
         /// <param name="queryParams"></param>
         /// <returns>Department[]</returns>
-
         public static Department[] GetDepartments(string[] queryParams)
         {
 
@@ -319,26 +287,10 @@ namespace NWA.HustleCards.BackEnd
                 return per.ToArray();
             };
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         /// <summary>
         /// AddPrize() will connect to the prizes db and add a prize based on what prize is being passed in th
         /// </summary>
         /// <param name="p"></param>
-        
         public static void AddPrize(Prize p)
         {
             using (var db = new LiteDatabase("Prizes.db"))
@@ -349,13 +301,10 @@ namespace NWA.HustleCards.BackEnd
                 people.Insert(Prize.Clone(p));
             }
         }
-
-        
         /// <summary>
         /// DeletePrize() will connect to the prizes database and delete the specified prize
         /// </summary>
         /// <param name="p"></param>
-
         public static void DeletePrize(Prize p)
         {
             using (var db = new LiteDatabase("Prizes.db"))
@@ -364,12 +313,6 @@ namespace NWA.HustleCards.BackEnd
          //       prizes.Delete(p);
             }
         }
-
-
-
-
-
-
         /// <summary>
         ///     In GetPrizes(), passing in a string array of queries.
         ///     
@@ -391,8 +334,6 @@ namespace NWA.HustleCards.BackEnd
         /// </summary>
         /// <param name="queryParams"></param>
         /// <returns>Prize[]</returns>
-
-
         public static Prize[] GetPrizes(string[] queryParams)
         {
 
@@ -468,15 +409,10 @@ namespace NWA.HustleCards.BackEnd
                 return per.ToArray();
             };
         }
-
-
-
-
         /// <summary>
         /// AddLocation() connect's to the Location database and add any location that is passed in through the parameter list
         /// </summary>
         /// <param name="p"></param>
-
         public static void AddLocation(Location p)
         {
             using (var db = new LiteDatabase("Locations.db"))
@@ -487,14 +423,11 @@ namespace NWA.HustleCards.BackEnd
                 people.Insert(Location.Clone(p));
             }
         }
-
-
         /// <summary>
         /// DeleteLocation() will connect to the Locations database and delete the specified 
         /// location, passed in through the params list.
         /// </summary>
         /// <param name="p"></param>
-
         public static void DeleteLocation(Location p)
         {
             using (var db = new LiteDatabase("Locations.db"))
@@ -503,11 +436,6 @@ namespace NWA.HustleCards.BackEnd
           //      locations.Delete(p);
             }
         }
-
-
-
-
-
         /// <summary>
         ///     In GetLocations(), passing in a string array of queries.
         ///     
@@ -529,10 +457,6 @@ namespace NWA.HustleCards.BackEnd
         /// </summary>
         /// <param name="queryParams"></param>
         /// <returns>Location[]</returns>
-
-
-
-
         public static Location[] GetLocations(string[] queryParams)
         {
 
