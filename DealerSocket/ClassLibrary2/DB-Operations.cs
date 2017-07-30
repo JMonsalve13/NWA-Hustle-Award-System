@@ -10,15 +10,6 @@ namespace NWA.HustleCards.BackEnd
 {
     public static class DB_Operations
     {
-        public static void SelectAll()
-        {
-
-            using (var db = new LiteDatabase("HustleCards"))
-            {
-                var results = Query.All();
-            }
-        }
-
         private struct GenericQuery<T>
         {
             public Query q;
@@ -54,7 +45,7 @@ namespace NWA.HustleCards.BackEnd
 
         public static void AddCard(HustleCard card)
         {
-            using (var db = new LiteDatabase("HustleCards"))
+            using (var db = new LiteDatabase("HustleCards.db"))
             {
                 var cards = db.GetCollection<HustleCard>("HustleCards");
                 
@@ -63,16 +54,17 @@ namespace NWA.HustleCards.BackEnd
         }
         public static void DeleteCard(HustleCard p)
         {
-            using (var db = new LiteDatabase("HustleCards"))
+            using (var db = new LiteDatabase("HustleCards.db"))
             {
-                var cards = db.GetCollection<HustleCard>("HustleCards");
-
+                var cards = db.GetCollection<Department>("HustleCards");
+                cards.Delete(p);
             }
         }
+
         public static HustleCard[] GetCards(string[] queryParams)
         {
 
-            using (var db = new LiteDatabase("Cards.db"))
+            using (var db = new LiteDatabase("HustleCards.db"))
             {
                 var people = db.GetCollection<HustleCard>("Cards");
                 List<GenericQuery<HustleCard>> qlist = new List<GenericQuery<HustleCard>>()
@@ -155,14 +147,20 @@ namespace NWA.HustleCards.BackEnd
                 people.Insert(Department.Clone(p));
             }
         }
+
         public static void DeleteDepartment(Department p)
         {
-
+            using(var db = new LiteDatabase("Dpartments.db"))
+            {
+                var departments = db.GetCollection<Department>("Departments");
+                departments.Delete(p);
+            }
         }
+
         public static Department[] GetDepartments(string[] queryParams)
         {
 
-            using (var db = new LiteDatabase("Prizes.db"))
+            using (var db = new LiteDatabase("Departments.db"))
             {
                 var people = db.GetCollection<Department>("Departments");
                 List<GenericQuery<Department>> qlist = new List<GenericQuery<Department>>()
@@ -245,10 +243,16 @@ namespace NWA.HustleCards.BackEnd
                 people.Insert(Prize.Clone(p));
             }
         }
+
         public static void DeletePrize(Prize p)
         {
-
+            using (var db = new LiteDatabase("Prizes.db"))
+            {
+                var prizes = db.GetCollection<Department>("Prizes");
+                prizes.Delete(p);
+            }
         }
+
         public static Prize[] GetPrizes(string[] queryParams)
         {
 
@@ -337,7 +341,11 @@ namespace NWA.HustleCards.BackEnd
         }
         public static void DeleteLocation(Location p)
         {
-
+            using (var db = new LiteDatabase("Locations.db"))
+            {
+                var locations = db.GetCollection<Department>("Locations");
+                locations.Delete(p);
+            }
         }
         public static Location[] GetLocations(string[] queryParams)
         {
@@ -429,7 +437,11 @@ namespace NWA.HustleCards.BackEnd
         }
         public static void DeletePerson(Person p)
         {
-
+            using (var db = new LiteDatabase("People.db"))
+            {
+                var people = db.GetCollection<Department>("People");
+                departments.Delete(p);
+            }
         }
         public static Person[] GetPersons(string[] queryParams)
         {
