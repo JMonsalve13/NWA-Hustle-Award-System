@@ -61,5 +61,20 @@ namespace NWA.HustleCards.BackEnd
             get { return reasonForCard; }
             set { reasonForCard = ReasonForCard; }
         }
+
+        public static HustleCard cloneHustleCard(HustleCard oldHustleCard)
+        {
+            HustleCard newHustleCard = new HustleCard();
+
+            newHustleCard.cardID = oldHustleCard.cardID;
+            newHustleCard.personID = oldHustleCard.personID;
+            newHustleCard.personReceiving = oldHustleCard.personReceiving;
+            newHustleCard.personGiving = oldHustleCard.personGiving;
+            newHustleCard.PersonReceivingDepartment = oldHustleCard.PersonReceivingDepartment;
+            newHustleCard.personReceivingLocation = oldHustleCard.personReceivingLocation;
+            newHustleCard.reasonForCard = oldHustleCard.reasonForCard;
+            newHustleCard.date = oldHustleCard.date;
+        }
+
     }
 }

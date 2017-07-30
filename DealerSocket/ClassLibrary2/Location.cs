@@ -4,7 +4,24 @@ using System.Text;
 
 namespace NWA.HustleCards.BackEnd
 {
-public struct Location
+    public class Location
     {
+        private string location;
+        public string Location
+        {
+            get { return location; }
+            set
+            {
+                location = location;
+            }
+        }
+
+        public static Location CloneLocation(Location oldLocation)
+        {
+            Location newLocation = new Location();
+            newLocation.location = oldLocation.location;
+        }
+
+
     }
 }

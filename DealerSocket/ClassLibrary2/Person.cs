@@ -68,6 +68,18 @@ namespace NWA.HustleCards.BackEnd
             }
         }
 
+        public static Person ClonePerson(Person OldPerson)
+        {
+            Person newPerson = new Person();
 
+            newPerson.firstName = OldPerson.firstName;
+            newPerson.lastName = OldPerson.lastName;
+            newPerson.location = OldPerson.location;
+            newPerson.id = OldPerson.id;
+            newPerson.department = OldPerson.department;
+            newPerson.email = newPerson.email;
+
+            return newPerson;
+        }
     }
 }
