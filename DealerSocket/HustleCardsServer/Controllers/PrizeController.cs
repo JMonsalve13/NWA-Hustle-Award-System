@@ -34,7 +34,7 @@ namespace HustleCardsServer.Controllers
         [HttpPost]
         public IActionResult Post()
         {
-            Prize p = default(Prize);
+            Prize p = new Prize();
             string[] quearyParams = HttpContext.Request.Query["create"].ToString().Split('(', ')', ',');
             p = EasyQueary.ReflectionUpdate(p, quearyParams);
             DB_Operations.AddPrize(p);

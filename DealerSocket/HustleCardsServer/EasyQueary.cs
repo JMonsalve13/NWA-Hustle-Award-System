@@ -68,7 +68,7 @@ namespace HustleCardsServer
                 string var = split[0];
                 string val = split[1];
 
-                typeof(T).GetField(var).SetValue(obj, val);
+                typeof(T).GetField(var, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance).SetValue(obj, val);
             }
             return obj;
         }

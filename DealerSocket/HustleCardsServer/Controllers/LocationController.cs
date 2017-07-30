@@ -34,7 +34,7 @@ namespace HustleCardsServer.Controllers
         [HttpPost]
         public IActionResult Post()
         {
-            Location p = default(Location);
+            Location p = new Location();
             string[] quearyParams = HttpContext.Request.Query["create"].ToString().Split('(', ')', ',');
             p = EasyQueary.ReflectionUpdate(p, quearyParams);
             DB_Operations.AddLocation(p);

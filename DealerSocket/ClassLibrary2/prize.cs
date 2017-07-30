@@ -24,8 +24,8 @@ namespace NWA.HustleCards.BackEnd
         /// <summary>
         /// The monetary value of the prize
         /// </summary>
-        private decimal val;
-        public decimal Value
+        private string val;
+        public string Value
         {
             get { return val; }
             set
@@ -36,8 +36,8 @@ namespace NWA.HustleCards.BackEnd
         /// <summary>
         /// Determines if the prize is still active for drawing or not.
         /// </summary>
-        private bool isActive;
-        public bool IsActive
+        private string isActive;
+        public string IsActive
         {
             get { return isActive; }
             set
