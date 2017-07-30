@@ -23,10 +23,10 @@ namespace HustleCardsServer
         /// </summary>
         /// <returns>the collection of selected People which fulfill the provided query</returns>
         [HttpGet]
-        public IActionResult Get()
+        public JsonResult Get()
         {
             string[] qs = EasyQueary.ConvertQueary(HttpContext.Request.Query, false);
-            return Ok(DB_Operations.GetPersons(qs));
+            return Json(DB_Operations.GetPersons(qs));
         }
 
         /// <summary>
