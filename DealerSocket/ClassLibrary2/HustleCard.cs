@@ -4,49 +4,35 @@ using System.Text;
 
 namespace NWA.HustleCards.BackEnd
 {
+    /// <summary>
+    /// Stores all data related to a HustleCard that is needed in computation
+    /// </summary>
     public class HustleCard
     {
-        private int personID;
-        private int cardID;
+        /// <summary>
+        /// The person for whom the HustleCard was filed
+        /// </summary>
         private string personReceiving;
-        private string personGiving;
-        private string personReceivingLocation;
-        private string personReceivingDepartment;
-        private string date;
-        private string reasonForCard;
-
-        public int PersonID
-        {
-            get { return personID; }
-            set { personID = value; }
-        }
-        public int CardID
-        {
-            get { return cardID; }
-            set { cardID = value; }
-        }
-
         public string PersonReceiving
         {
             get { return personReceiving; }
             set { personReceiving = value; }
         }
+
+        /// <summary>
+        /// The person who filed the HustleCard
+        /// </summary>
+        private string personGiving;
         public string PersonGiving
         {
             get { return personGiving; }
             set { personGiving = value; }
         }
-        public string PersonReceivingLocation
-        {
-            get { return personReceivingLocation; }
-            set { personReceivingLocation = value; }
-        }
-        public string PersonReceivingDepartment
-        {
-            get { return personReceivingDepartment; }
-            set { personReceivingDepartment = value; }
-        }
-
+        
+        /// <summary>
+        /// The date when this card was awarded
+        /// </summary>
+        private string date;
         public string Date
         {
             get { return date; }
@@ -56,27 +42,31 @@ namespace NWA.HustleCards.BackEnd
             }
         }
 
+        /// <summary>
+        /// The commented reason for awarding this HustleCard
+        /// </summary>
+        private string reasonForCard;
         public string ReasonForCard
         {
             get { return reasonForCard; }
             set { reasonForCard = value; }
         }
 
+        /// <summary>
+        /// makes a deep clone of the HustleCard passed in. Used primarily in persisting to database.
+        /// </summary>
+        /// <param name="oldPrize">the HustleCard to clone</param>
+        /// <returns>the cloned HustleCard</returns>
         public static HustleCard Clone(HustleCard oldHustleCard)
         {
             HustleCard newHustleCard = new HustleCard();
-
-            newHustleCard.cardID = oldHustleCard.cardID;
-            newHustleCard.personID = oldHustleCard.personID;
+            
             newHustleCard.personReceiving = oldHustleCard.personReceiving;
             newHustleCard.personGiving = oldHustleCard.personGiving;
-            newHustleCard.PersonReceivingDepartment = oldHustleCard.PersonReceivingDepartment;
-            newHustleCard.personReceivingLocation = oldHustleCard.personReceivingLocation;
             newHustleCard.reasonForCard = oldHustleCard.reasonForCard;
             newHustleCard.date = oldHustleCard.date;
 
             return newHustleCard;
         }
-
     }
 }

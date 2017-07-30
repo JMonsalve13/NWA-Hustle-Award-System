@@ -7060,15 +7060,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AndrewSylvester117\\.nuget\\packages\\": {}
+    "C:\\Users\\Patrick Conner\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AndrewSylvester117\\Desktop\\New Dealer Socket Repo\\NWA-Hustle-Award-System\\DealerSocket\\ClassLibrary2\\BackEnd.csproj",
+      "projectUniqueName": "E:\\Hackathons\\NWA-Hustle-Award-System\\DealerSocket\\ClassLibrary2\\BackEnd.csproj",
       "projectName": "BackEnd",
-      "projectPath": "C:\\Users\\AndrewSylvester117\\Desktop\\New Dealer Socket Repo\\NWA-Hustle-Award-System\\DealerSocket\\ClassLibrary2\\BackEnd.csproj",
-      "outputPath": "C:\\Users\\AndrewSylvester117\\Desktop\\New Dealer Socket Repo\\NWA-Hustle-Award-System\\DealerSocket\\ClassLibrary2\\obj\\",
+      "projectPath": "E:\\Hackathons\\NWA-Hustle-Award-System\\DealerSocket\\ClassLibrary2\\BackEnd.csproj",
+      "outputPath": "E:\\Hackathons\\NWA-Hustle-Award-System\\DealerSocket\\ClassLibrary2\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

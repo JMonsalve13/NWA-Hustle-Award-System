@@ -9,10 +9,18 @@ using NWA.HustleCards.BackEnd;
 
 namespace HustleCardsServer
 {
+    /// <summary>
+    /// The web API controller for interfacing with cards in the database back-end
+    /// </summary>
     [Route("api/card")]
     public class CardsController : Controller
     {
-        // GET: api/person
+        
+        /// <summary>
+        /// Run a query on the HustleCards database, and return the collection of selected cards.
+        /// Does not allow write operations to be executed
+        /// </summary>
+        /// <returns>the collection of selected cards which fulfill the provided query</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -20,7 +28,10 @@ namespace HustleCardsServer
             return Ok(DB_Operations.GetCards(qs));
         }
 
-        // POST api/values
+        /// <summary>
+        /// Parse out and construct a new card using data passed in from the query string, then adds it to the cards database.
+        /// </summary>
+        /// <returns>An okay message!</returns>
         [HttpPost]
         public IActionResult Post()
         {
@@ -31,7 +42,11 @@ namespace HustleCardsServer
             return Ok("Added person!");
         }
 
-        // PUT api/values/5
+        /// <summary>
+        /// Run a query on the HustleCards database, and return the collection of selected cards.
+        /// Does allow write operations to be executed mid-queary
+        /// </summary>
+        /// <returns>the collection of selected cards which fulfill the provided query</returns>
         [HttpPut("{id}")]
         public IActionResult Put()
         {
@@ -39,7 +54,10 @@ namespace HustleCardsServer
             return Ok(DB_Operations.GetCards(qs));
         }
 
-        // DELETE api/values/5
+        /// <summary>
+        /// Run a query on the HustleCards database, and removes all records of the collection of selected cards.
+        /// </summary>
+        /// <returns>An okay message with the number of records removed</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete()
         {

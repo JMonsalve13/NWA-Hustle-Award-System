@@ -4,15 +4,15 @@ using System.Text;
 
 namespace NWA.HustleCards.BackEnd
 {
+    /// <summary>
+    /// Stores all data related to a Person that is needed in computation
+    /// </summary>
     public class Person
     {
+        /// <summary>
+        /// This Person's first name
+        /// </summary>
         private string firstName;
-        private string lastName;
-        private string email;
-        private string department;
-        private string location;
-        private int id;
-
         public string FirstName
         {
             get { return firstName; }
@@ -22,6 +22,10 @@ namespace NWA.HustleCards.BackEnd
             }
         }
 
+        /// <summary>
+        /// This Person's last name
+        /// </summary>
+        private string lastName;
         public string LastName
         {
             get { return lastName; }
@@ -31,6 +35,10 @@ namespace NWA.HustleCards.BackEnd
             }
         }
 
+        /// <summary>
+        /// This person's email
+        /// </summary>
+        private string email;
         public string Email
         {
             get { return email; }
@@ -40,7 +48,11 @@ namespace NWA.HustleCards.BackEnd
             }
         }
 
-        public string Department
+        /// <summary>
+        /// The department in which this person works
+        /// </summary>
+        private Department department;
+        public Department Department
         {
             get { return department; }
             set
@@ -50,7 +62,11 @@ namespace NWA.HustleCards.BackEnd
 
         }
 
-        public string Location
+        /// <summary>
+        /// The location where this person works
+        /// </summary>
+        private Location location;
+        public Location Location
         {
             get { return location; }
             set
@@ -58,16 +74,12 @@ namespace NWA.HustleCards.BackEnd
                 location = value;
             }
         }
-
-        public int ID
-        {
-            get { return id; }
-            set
-            {
-                id = value;
-            }
-        }
-
+        
+        /// <summary>
+        /// makes a deep clone of the Person passed in. Used primarily in persisting to database.
+        /// </summary>
+        /// <param name="oldPrize">the Person to clone</param>
+        /// <returns>the cloned Person</returns>
         public static Person Clone(Person OldPerson)
         {
             Person newPerson = new Person();
@@ -75,7 +87,6 @@ namespace NWA.HustleCards.BackEnd
             newPerson.firstName = OldPerson.firstName;
             newPerson.lastName = OldPerson.lastName;
             newPerson.location = OldPerson.location;
-            newPerson.id = OldPerson.id;
             newPerson.department = OldPerson.department;
             newPerson.email = OldPerson.email;
 

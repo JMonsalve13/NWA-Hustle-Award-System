@@ -76,7 +76,7 @@ namespace NWA.HustleCards.BackEnd
             using (var db = new LiteDatabase("HustleCards.db"))
             {
                 var cards = db.GetCollection<Department>("HustleCards");
-                cards.Delete(p);
+         //       cards.Delete(p);
             }
         }
 
@@ -216,7 +216,7 @@ namespace NWA.HustleCards.BackEnd
             using(var db = new LiteDatabase("Departments.db"))
             {
                 var departments = db.GetCollection<Department>("Departments");
-                departments.Delete(p);
+       //         departments.Delete(p);
             }
         }
 
@@ -361,7 +361,7 @@ namespace NWA.HustleCards.BackEnd
             using (var db = new LiteDatabase("Prizes.db"))
             {
                 var prizes = db.GetCollection<Department>("Prizes");
-                prizes.Delete(p);
+         //       prizes.Delete(p);
             }
         }
 
@@ -500,7 +500,7 @@ namespace NWA.HustleCards.BackEnd
             using (var db = new LiteDatabase("Locations.db"))
             {
                 var locations = db.GetCollection<Department>("Locations");
-                locations.Delete(p);
+          //      locations.Delete(p);
             }
         }
 
@@ -642,7 +642,7 @@ namespace NWA.HustleCards.BackEnd
             using (var db = new LiteDatabase("People.db"))
             {
                 var people = db.GetCollection<Department>("People");
-                departments.Delete(p);
+          //      departments.Delete(p);
             }
         }
 

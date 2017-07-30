@@ -9,10 +9,17 @@ using NWA.HustleCards.BackEnd;
 
 namespace HustleCardsServer.Controllers
 {
+    /// <summary>
+    /// The web API controller for interfacing with Locations in the database back-end
+    /// </summary>
     [Route("api/location")]
     public class LocationController : Controller
     {
-        // GET: api/person
+        /// <summary>
+        /// Run a query on the Locations database, and return the collection of selected Locations.
+        /// Does not allow write operations to be executed
+        /// </summary>
+        /// <returns>the collection of selected Locations which fulfill the provided query</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -20,7 +27,10 @@ namespace HustleCardsServer.Controllers
             return Ok(DB_Operations.GetLocations(qs));
         }
 
-        // POST api/values
+        /// <summary>
+        /// Parse out and construct a new Location using data passed in from the query string, then adds it to the Locations database.
+        /// </summary>
+        /// <returns>An okay message!</returns>
         [HttpPost]
         public IActionResult Post()
         {
@@ -31,7 +41,11 @@ namespace HustleCardsServer.Controllers
             return Ok("Added person!");
         }
 
-        // PUT api/values/5
+        /// <summary>
+        /// Run a query on the Locations database, and return the collection of selected Locations.
+        /// Does allow write operations to be executed mid-queary
+        /// </summary>
+        /// <returns>the collection of selected Locations which fulfill the provided query</returns>
         [HttpPut("{id}")]
         public IActionResult Put()
         {
@@ -39,7 +53,10 @@ namespace HustleCardsServer.Controllers
             return Ok(DB_Operations.GetLocations(qs));
         }
 
-        // DELETE api/values/5
+        /// <summary>
+        /// Run a query on the Locations database, and removes all records of the collection of selected Locations.
+        /// </summary>
+        /// <returns>An okay message with the number of records removed</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete()
         {
