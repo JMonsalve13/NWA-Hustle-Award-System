@@ -3,11 +3,27 @@
     <head>
         <link rel="stylesheet" href="main.css"/>
 		<script>
-		function test(){
-			var username = document.getElementById("username").value;
-			if(username.toLowerCase() == "bob"){
+            function test() {
+                var username = document.getElementById("username");
+                var email = document.getElementById("email");
+                var response = document.getElementById("response");
+
+            var username = document.getElementById("username").value;
+
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("Get",
+                "/api/person/?firstName=" + username.value
+                + "&email=" + email.value + "_co",
+                false);
+            xmlHttp.send(null);
+
+            var ret = xmlHttp.responseText;
+            if (ret[0] != null) {
+                response.innerHTML = "Hello " + username.value + "!";
 				document.location.href = "fourprocesschoice.html";
-			}
+            } else {
+                response.innerHTML = "Login failed!";
+            }
 		}
 </script>
 		<title>Emplyoee Login</title>
@@ -18,7 +34,7 @@
         <form action="myform">
             <input id="username" type="text" name="input" value="">
             <br/>
-            <input type="text" name="input" value="">
+            <input id="email" type="text" name="input" value="">
             <input id="loginBtn" type="button" name="button" value="Login" onclick="test()">
         </form> 
         <p id="response"></p>

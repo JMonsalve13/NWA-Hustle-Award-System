@@ -42,7 +42,7 @@ namespace HustleCardsServer
 
                 string[] split = kv.Value.ToString().Split('_');
                 string val = split[0];
-                string eq = split[1];
+                string eq = split.Length>1? split[1]: "eq";
 
                 string op = $"{key}{(kv.Key.Contains("_up") ? '+' : EasyQueary.OpConversion(eq))}{val}";
 
