@@ -8,17 +8,17 @@ namespace NWA.HustleCards.BackEnd
     {
         private string department;
 
-        public string Department
+        public string _Department
         {
             get { return department; }
             set
             {
-                department = Department;
+                department = value;
             }
         }
         
 
-        public static Department CloneDepartment(Department oldDepartment)
+        public static Department Clone(Department oldDepartment)
         {
             Department newDepartment = new Department();
             newDepartment.department = oldDepartment.department;

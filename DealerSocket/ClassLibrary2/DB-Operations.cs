@@ -58,17 +58,7 @@ namespace NWA.HustleCards.BackEnd
             {
                 var cards = db.GetCollection<HustleCard>("HustleCards");
                 
-                cards.Insert(new HustleCard
-                {
-                    PersonID = card.PersonID,
-                    CardID = card.CardID,
-                    PersonGiving = card.PersonGiving,
-                    PersonReceiving = card.PersonReceiving,
-                    PersonReceivingDepartment = card.PersonReceivingDepartment,
-                    PersonReceivingLocation = card.PersonReceivingLocation,
-                    Date = card.Date,
-                    ReasonForCard = card.ReasonForCard
-                });
+                cards.Insert(HustleCard.Clone(card));
             }
         }
         public static void DeleteCard(HustleCard p)
@@ -76,8 +66,9 @@ namespace NWA.HustleCards.BackEnd
             using (var db = new LiteDatabase("HustleCards"))
             {
                 var cards = db.GetCollection<HustleCard>("HustleCards");
-                
+
             }
+        }
         public static HustleCard[] GetCards(string[] queryParams)
         {
 
@@ -161,7 +152,7 @@ namespace NWA.HustleCards.BackEnd
                 var people = db.GetCollection<Department>("Departments");
                 // now we can carry out CRUD operations on the data
 
-                people.Insert(null);
+                people.Insert(Department.Clone(p));
             }
         }
         public static void DeleteDepartment(Department p)
@@ -251,7 +242,7 @@ namespace NWA.HustleCards.BackEnd
                 var people = db.GetCollection<Prize>("Prizes");
                 // now we can carry out CRUD operations on the data
 
-                people.Insert(null);
+                people.Insert(Prize.Clone(p));
             }
         }
         public static void DeletePrize(Prize p)
@@ -341,7 +332,7 @@ namespace NWA.HustleCards.BackEnd
                 var people = db.GetCollection<Location>("Locations");
                 // now we can carry out CRUD operations on the data
 
-                people.Insert(null);
+                people.Insert(Location.Clone(p));
             }
         }
         public static void DeleteLocation(Location p)
@@ -431,15 +422,7 @@ namespace NWA.HustleCards.BackEnd
                 var people = db.GetCollection<Person>("People");
                 // now we can carry out CRUD operations on the data
 
-                people.Insert(new Person
-                {
-                    FirstName = p.FirstName,
-                    LastName = p.LastName,
-                    Department = p.Department,
-                    Location = p.Location,
-                    Email = p.Email,
-                    ID = p.ID
-                });
+                people.Insert(Person.Clone(p));
 
             }
 

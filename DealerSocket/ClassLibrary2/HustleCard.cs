@@ -18,33 +18,33 @@ namespace NWA.HustleCards.BackEnd
         public int PersonID
         {
             get { return personID; }
-            set { personID = PersonID; }
+            set { personID = value; }
         }
         public int CardID
         {
             get { return cardID; }
-            set { cardID = CardID; }
+            set { cardID = value; }
         }
 
         public string PersonReceiving
         {
             get { return personReceiving; }
-            set { personReceiving = PersonReceiving; }
+            set { personReceiving = value; }
         }
         public string PersonGiving
         {
             get { return personGiving; }
-            set { personGiving = PersonGiving; }
+            set { personGiving = value; }
         }
         public string PersonReceivingLocation
         {
             get { return personReceivingLocation; }
-            set { personReceivingLocation = PersonReceivingLocation; }
+            set { personReceivingLocation = value; }
         }
         public string PersonReceivingDepartment
         {
             get { return personReceivingDepartment; }
-            set { personReceivingDepartment = PersonReceivingDepartment; }
+            set { personReceivingDepartment = value; }
         }
 
         public string Date
@@ -52,17 +52,17 @@ namespace NWA.HustleCards.BackEnd
             get { return date; }
             set
             {
-                date = Date;
+                date = value;
             }
         }
 
         public string ReasonForCard
         {
             get { return reasonForCard; }
-            set { reasonForCard = ReasonForCard; }
+            set { reasonForCard = value; }
         }
 
-        public static HustleCard cloneHustleCard(HustleCard oldHustleCard)
+        public static HustleCard Clone(HustleCard oldHustleCard)
         {
             HustleCard newHustleCard = new HustleCard();
 
@@ -74,6 +74,8 @@ namespace NWA.HustleCards.BackEnd
             newHustleCard.personReceivingLocation = oldHustleCard.personReceivingLocation;
             newHustleCard.reasonForCard = oldHustleCard.reasonForCard;
             newHustleCard.date = oldHustleCard.date;
+
+            return newHustleCard;
         }
 
     }

@@ -7,7 +7,7 @@ namespace NWA.HustleCards.BackEnd
     public class Prize
     {
         private string prizeName;
-        private decimal value;
+        private decimal val;
         private bool isActive;
         private string picPath;
         private string desc;
@@ -17,16 +17,16 @@ namespace NWA.HustleCards.BackEnd
             get { return prizeName; }
             set
             {
-                prizeName = prizeName;
+                prizeName = value;
             }
         }
 
         public decimal Value
         {
-            get { return value; }
+            get { return val; }
             set
             {
-                value = Value;
+                val = value;
             }
         }
 
@@ -35,7 +35,7 @@ namespace NWA.HustleCards.BackEnd
             get { return isActive; }
             set
             {
-                isActive = isActive;
+                isActive = value;
             }
         }
 
@@ -44,7 +44,7 @@ namespace NWA.HustleCards.BackEnd
             get { return picPath; }
             set
             {
-                picPath = PicPath;
+                picPath = value;
             }
         }
 
@@ -53,16 +53,16 @@ namespace NWA.HustleCards.BackEnd
             get { return desc; }
             set
             {
-                desc = Desc;
+                desc = value;
             }
         }
 
 
-        public static Prize ClonePrize(Prize oldPrize)
+        public static Prize Clone(Prize oldPrize)
         {
             Prize newPrize = new Prize();
             newPrize.prizeName = oldPrize.prizeName;
-            newPrize.value = oldPrize.value;
+            newPrize.val = oldPrize.val;
             newPrize.picPath = oldPrize.picPath;
             newPrize.isActive = oldPrize.isActive;
             newPrize.desc = oldPrize.desc;

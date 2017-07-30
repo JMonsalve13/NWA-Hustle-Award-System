@@ -7,19 +7,20 @@ namespace NWA.HustleCards.BackEnd
     public class Location
     {
         private string location;
-        public string Location
+        public string _Location
         {
             get { return location; }
             set
             {
-                location = location;
+                location = value;
             }
         }
 
-        public static Location CloneLocation(Location oldLocation)
+        public static Location Clone(Location oldLocation)
         {
             Location newLocation = new Location();
             newLocation.location = oldLocation.location;
+            return newLocation;
         }
 
 

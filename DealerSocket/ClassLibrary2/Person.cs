@@ -18,7 +18,7 @@ namespace NWA.HustleCards.BackEnd
             get { return firstName; }
             set
             {
-                firstName = FirstName;
+                firstName = value;
             }
         }
 
@@ -27,7 +27,7 @@ namespace NWA.HustleCards.BackEnd
             get { return lastName; }
             set
             {
-                lastName = LastName;
+                lastName = value;
             }
         }
 
@@ -36,7 +36,7 @@ namespace NWA.HustleCards.BackEnd
             get { return email; }
             set
             {
-                email = Email;
+                email = value;
             }
         }
 
@@ -45,7 +45,7 @@ namespace NWA.HustleCards.BackEnd
             get { return department; }
             set
             {
-                department = Department;
+                department = value;
             }
 
         }
@@ -55,7 +55,7 @@ namespace NWA.HustleCards.BackEnd
             get { return location; }
             set
             {
-                location = Location;
+                location = value;
             }
         }
 
@@ -64,11 +64,11 @@ namespace NWA.HustleCards.BackEnd
             get { return id; }
             set
             {
-                id = ID;
+                id = value;
             }
         }
 
-        public static Person ClonePerson(Person OldPerson)
+        public static Person Clone(Person OldPerson)
         {
             Person newPerson = new Person();
 
@@ -77,7 +77,7 @@ namespace NWA.HustleCards.BackEnd
             newPerson.location = OldPerson.location;
             newPerson.id = OldPerson.id;
             newPerson.department = OldPerson.department;
-            newPerson.email = newPerson.email;
+            newPerson.email = OldPerson.email;
 
             return newPerson;
         }
