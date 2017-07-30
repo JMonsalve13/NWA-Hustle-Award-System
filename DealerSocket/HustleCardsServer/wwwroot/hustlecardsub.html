@@ -12,6 +12,15 @@
 				console.log(department);
 				console.log(person);
 				console.log(reasonBox);
+				
+				var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("POST",
+                    "/api/card/?create=(prizeName=" + nameInput.value +
+                    ",val=" + valueInput.value +
+                    ",picPath=" + imgInput.value +
+                    ",desc=" + descriptionInput.value +
+                    ",isActive=" + activeInput.value+")",
+                false);
 			}
 			
 			function logout(){
