@@ -1,27 +1,52 @@
 ﻿using System;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace NWA.HustleCards.Persistance
 {
     public class FileSave
     {
-        private FileStream fs;
+        public void CheckFileStructure(string path)
+        {
+            if (!File.Exists(System.AppContext.BaseDirectory + "\\NWATemp"))
+            {
+                Directory.CreateDirectory(System.AppContext.BaseDirectory + "\\NWATemp");
+            }
+            if (!File.Exists(System.AppContext.BaseDirectory + "\\NWATemp\\CSVFiles"))
+            {
+                Directory.CreateDirectory(System.AppContext.BaseDirectory + "\\NWATemp\\CSVFiles");
+            }
+            if (!File.Exists(System.AppContext.BaseDirectory + "\\NWATemp\\Images"))
+            {
+                Directory.CreateDirectory(System.AppContext.BaseDirectory + "\\NWATemp\\Images");
+            }
+        }
 
         public bool WriteFile(string path, string fileName, string data)
         {
             //Overwrite or create a CSV file from the folder structure
             //Returns if it successfully ran
-
-            string fullPath = $"{path}\\{fileName}.CSV";
-            if (!File.Exists(fullPath))
+            try
             {
-                File.Create(fullPath);
+                string fullPath = $"{path}\\{fileName}.CSV";
+                if (!File.Exists(fullPath))
+                {
+                    File.Create(fullPath);
+                    File.WriteAllText(fullPath, data);
+                    return true;
+                }
+                else
+                {
+                    File.WriteAllText(fullPath, data);
+                }
             }
-            else
+            catch (Exception)
             {
-                File.WriteAllText(fullPath, data);
+                return false;
             }
             return true;
         }
@@ -30,32 +55,40 @@ namespace NWA.HustleCards.Persistance
         {
             //Get the CSV from the folder structure and turn it into a string
             //Returns if it successfully ran
-            if (!File.Exists(path))
+            try
+            {
+                if (!File.Exists(path))
+                {
+                    CSV = "";
+                    return false;
+                }
+                else
+                {
+                    CSV = "";
+                    string[] lines = File.ReadAllLines(path);
+                    for(int i = 0; i < lines.Length; i++)
+                    {
+                        if (i < lines.Length - 1)
+                        {
+                            CSV += lines[i] + ",";
+                        }
+                        else
+                        {
+                            CSV += lines[i];
+                        }
+                    }
+                    //CSV = Regex.Replace(CSV, @"\s+", "");
+                }
+                return true;
+            }
+            catch (Exception)
             {
                 CSV = "";
                 return false;
             }
-            else
-            {
-                CSV = "";
-                string[] lines = File.ReadAllLines(path);
-                for(int i = 0; i < lines.Length; i++)
-                {
-                    if (i < lines.Length - 1)
-                    {
-                        CSV += lines[i] + ",";
-                    }
-                    else
-                    {
-                        CSV += lines[i];
-                    }
-                }
-                CSV = Regex.Replace(CSV, @"\s+", "");
-                return true;
-            }
         }
 
-        public bool AddImage(string fileName, byte[] photo)
+        public bool AddImage(string path, string fileName, byte[] photo)
         {
             //Get an image from the database and add it to the folder structure
             //Returns if it successfully ran
@@ -63,26 +96,46 @@ namespace NWA.HustleCards.Persistance
             throw new NotImplementedException();
         }
 
-        public void Save()
+        public void Save(string data)
         {
-            string path = Environment.ExpandEnvironmentVariables("%AppData%\\NWATemp");
-            string savePath = Environment.ExpandEnvironmentVariables("%AppData%");
+            string path = System.AppContext.BaseDirectory + "\\NWATemp";
             Console.WriteLine(path);
-            Console.WriteLine(savePath);
 
-            //Zip up all the new files and overwrite the old file structure as a .NWA extension
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-                
-                ZipFile.CreateFromDirectory(path, savePath);
-                Path.ChangeExtension(path + ".zip", ".NWA");
-            }
-            else
-            {
-                ZipFile.CreateFromDirectory(path, savePath);
-                //Path.ChangeExtension(path + ".zip", ".NWA");
-            }
+            File.SetAttributes(path, FileAttributes.Normal);
+            File.SetAttributes(System.AppContext.BaseDirectory + "\\NWATemp\\CSVFiles", FileAttributes.Normal);
+
+            FileInfo FI = new FileInfo(System.AppContext.BaseDirectory);
+            FI.IsReadOnly = false;
+
+            XDocument xmlDoc = new XDocument();
+            //XElement xEle = new XElement("People", from l in data.Split(',') select new XElement("Person", new XAttribute("Name", l)));
+            string[] stuff = data.Split(',');
+            XElement xEle = new XElement("People", 
+                new XElement("Person", new XAttribute("ID", stuff[0]), new XAttribute("FirstName", stuff[1].Trim()), new XAttribute("LastName", stuff[2].Trim()), 
+                new XAttribute("Email", stuff[3].Trim()), new XAttribute("Department", stuff[4].Trim()), new XAttribute("Location", stuff[5].Trim())));
+            xmlDoc.Add(xEle);
+            Console.WriteLine(xmlDoc);
+
+            //if (!File.Exists(path + ".zip"))
+            //{
+            //    using (ZipArchive archive = ZipFile.Open(path + ".zip", ZipArchiveMode.Create))
+            //    {
+            //        FI.IsReadOnly = false;
+            //        archive.CreateEntryFromFile(System.AppContext.BaseDirectory + "\\NWATemp\\CSVFiles", "CSVFiles");
+            //        FI.IsReadOnly = false;
+            //        archive.Dispose();
+            //    }
+            //}
+            //else
+            //{
+            //    using (ZipArchive archive = ZipFile.Open(path + ".zip", ZipArchiveMode.Update))
+            //    {
+            //        FI.IsReadOnly = false;
+            //        archive.CreateEntryFromFile(System.AppContext.BaseDirectory + "\\NWATemp\\CSVFiles", "CSVFiles");
+            //        FI.IsReadOnly = false;
+            //        archive.Dispose();
+            //    }
+            //}
         }
     }
 }

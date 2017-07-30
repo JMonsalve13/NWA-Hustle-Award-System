@@ -14,15 +14,54 @@ namespace TestConsoleApp
         public void Run()
         {
             FileSave test = new FileSave();
-            //test.Save();
-            string fileName = "People";
-            test.WriteFile(Environment.ExpandEnvironmentVariables("%Appdata%\\NWATemp\\"), fileName, "123456, Andrew, Sylvester, ASyl@Gmail.com, Sales, Salt Lake City");
+            test.CheckFileStructure(System.AppContext.BaseDirectory);
+            
+            string writepath = System.AppContext.BaseDirectory + "\\NWATemp\\CSVFiles";
+            string imagePath = System.AppContext.BaseDirectory + "\\NWATemp\\Images";
+
+            //test.AddImage(imagePath, "Teddybear", );
+
+            //string fileName = "People";
+            //bool success = test.WriteFile(writepath, fileName, "1, Andrew, Sylvester, ASyl@Gmail.com, Sales, Salt Lake City");
 
             string holder = "";
-            test.TryRead(Environment.ExpandEnvironmentVariables("%Appdata%\\NWATemp\\People.CSV"), out holder);
+            test.TryRead(Environment.ExpandEnvironmentVariables(writepath + "\\People.CSV"), out holder);
             Console.WriteLine(holder);
-            
-            test.WriteFile(Environment.ExpandEnvironmentVariables("%Appdata%\\NWATemp\\"), fileName, holder);
+            Console.WriteLine();
+
+            //fileName = "Prizes";
+            //success = test.WriteFile(Environment.ExpandEnvironmentVariables(writepath), fileName, "1, TeddyBear, 1.50, true, Fluffy and clean, C:/temp");
+
+            //holder = "";
+            //success = test.TryRead(Environment.ExpandEnvironmentVariables(writepath + "\\Prizes.CSV"), out holder);
+            //Console.WriteLine(holder);
+            //Console.WriteLine();
+
+            //fileName = "Cards";
+            //success = test.WriteFile(Environment.ExpandEnvironmentVariables(writepath), fileName, "1, 342, 254, Sales, Draper, 07-29-17, Good Person");
+
+            //holder = "";
+            //success = test.TryRead(Environment.ExpandEnvironmentVariables(writepath + "\\Cards.CSV"), out holder);
+            //Console.WriteLine(holder);
+            //Console.WriteLine();
+
+            //fileName = "Departments";
+            //success = test.WriteFile(Environment.ExpandEnvironmentVariables(writepath), fileName, "Sales, Purchasing, HR");
+
+            //holder = "";
+            //success = test.TryRead(Environment.ExpandEnvironmentVariables(writepath + "\\Departments.CSV"), out holder);
+            //Console.WriteLine(holder);
+            //Console.WriteLine();
+
+            //fileName = "Locations";
+            //success = test.WriteFile(Environment.ExpandEnvironmentVariables(writepath), fileName, "Draper, Salt Lake City, Russia");
+
+            //holder = "";
+            //success = test.TryRead(Environment.ExpandEnvironmentVariables(writepath + "\\Locations.CSV"), out holder);
+            //Console.WriteLine(holder);
+            //Console.WriteLine();
+
+            test.Save(holder);
         }
     }
 }

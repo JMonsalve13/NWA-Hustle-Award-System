@@ -25,5 +25,9 @@
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary2\BackEnd.csproj" />
+    <ProjectReference Include="..\MiscellaneousAssistantFunctions\MiscellaneousAssistantFunctions.csproj" />
+  </ItemGroup>
 
 </Project>

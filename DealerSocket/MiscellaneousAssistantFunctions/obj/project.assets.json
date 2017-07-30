@@ -7037,15 +7037,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dylan Shoupe\\.nuget\\packages\\": {}
+    "C:\\Users\\AndrewSylvester117\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\DealerSocket\\MiscellaneousAssistantFunctions\\MiscellaneousAssistantFunctions.csproj",
+      "projectUniqueName": "C:\\Users\\AndrewSylvester117\\Desktop\\New Dealer Socket Repo\\NWA-Hustle-Award-System\\DealerSocket\\MiscellaneousAssistantFunctions\\MiscellaneousAssistantFunctions.csproj",
       "projectName": "MiscellaneousAssistantFunctions",
-      "projectPath": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\DealerSocket\\MiscellaneousAssistantFunctions\\MiscellaneousAssistantFunctions.csproj",
-      "outputPath": "C:\\Users\\Dylan Shoupe\\Documents\\GitHub\\NWA-Hustle-Award-System\\DealerSocket\\MiscellaneousAssistantFunctions\\obj\\",
+      "projectPath": "C:\\Users\\AndrewSylvester117\\Desktop\\New Dealer Socket Repo\\NWA-Hustle-Award-System\\DealerSocket\\MiscellaneousAssistantFunctions\\MiscellaneousAssistantFunctions.csproj",
+      "outputPath": "C:\\Users\\AndrewSylvester117\\Desktop\\New Dealer Socket Repo\\NWA-Hustle-Award-System\\DealerSocket\\MiscellaneousAssistantFunctions\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
