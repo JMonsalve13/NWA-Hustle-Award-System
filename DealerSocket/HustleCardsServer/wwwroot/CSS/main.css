@@ -65,8 +65,8 @@ input:checked + .slider:before {
             overflow: scroll;  
 }
 #box3{
-    background-color: #089acf;
-            width: 400px;
+    background-color: #fcfcfc;
+            width: 700px;
             height: 100px; 
             border-bottom-width: medium;
 }
