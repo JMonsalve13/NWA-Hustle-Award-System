@@ -4,14 +4,15 @@ using System.Text;
 
 namespace NWA.HustleCards.BackEnd
 {
+    /// <summary>
+    /// Stores all data related to a Prize that is needed in computation
+    /// </summary>
     public class Prize
     {
+        /// <summary>
+        /// The mane of the prize
+        /// </summary>
         private string prizeName;
-        private decimal val;
-        private bool isActive;
-        private string picPath;
-        private string desc;
-
         public string PrizeName
         {
             get { return prizeName; }
@@ -20,7 +21,10 @@ namespace NWA.HustleCards.BackEnd
                 prizeName = value;
             }
         }
-
+        /// <summary>
+        /// The monetary value of the prize
+        /// </summary>
+        private decimal val;
         public decimal Value
         {
             get { return val; }
@@ -29,7 +33,10 @@ namespace NWA.HustleCards.BackEnd
                 val = value;
             }
         }
-
+        /// <summary>
+        /// Determines if the prize is still active for drawing or not.
+        /// </summary>
+        private bool isActive;
         public bool IsActive
         {
             get { return isActive; }
@@ -38,7 +45,10 @@ namespace NWA.HustleCards.BackEnd
                 isActive = value;
             }
         }
-
+        /// <summary>
+        /// The link or path to this prize's image
+        /// </summary>
+        private string picPath;
         public string PicPath
         {
             get { return picPath; }
@@ -47,7 +57,10 @@ namespace NWA.HustleCards.BackEnd
                 picPath = value;
             }
         }
-
+        /// <summary>
+        /// Access the decription of the prize
+        /// </summary>
+        private string desc;
         public string Desc
         {
             get { return desc; }
@@ -57,10 +70,15 @@ namespace NWA.HustleCards.BackEnd
             }
         }
 
-
+        /// <summary>
+        /// makes a deep clone of the prize passed in. Used primarily in persisting to database.
+        /// </summary>
+        /// <param name="oldPrize">the prize to clone</param>
+        /// <returns>the cloned prize</returns>
         public static Prize Clone(Prize oldPrize)
         {
             Prize newPrize = new Prize();
+
             newPrize.prizeName = oldPrize.prizeName;
             newPrize.val = oldPrize.val;
             newPrize.picPath = oldPrize.picPath;
@@ -69,11 +87,6 @@ namespace NWA.HustleCards.BackEnd
 
             return newPrize;
         }
-
-
-
-
-
     }
 }
 

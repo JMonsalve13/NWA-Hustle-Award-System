@@ -12,10 +12,16 @@ using Microsoft.Extensions.Logging;
 
 namespace HustleCardsServer
 {
+    /// <summary>
+    /// Does all the heavy lifting in getting the ASP.NET web server up and running
+    /// </summary>
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to add services to the container.
+        /// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        /// </summary>
+        /// <param name="services">the collection in which to add services</param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(
@@ -33,7 +39,12 @@ namespace HustleCardsServer
             services.AddMvc();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// </summary>
+        /// <param name="app">The parameter used to construct server configuration</param>
+        /// <param name="env">The parameter used to construct server hosting configuration</param>
+        /// <param name="loggerFactory">The parameter used to construct server logging configuration</param>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             app.UseCors("OpenPolicy");
@@ -50,6 +61,7 @@ namespace HustleCardsServer
             app.UseMvcWithDefaultRoute();
             app.UseDefaultFiles();
             app.UseStaticFiles();
+
             //loggerFactory.AddConsole();
 
             //if (env.IsDevelopment())
