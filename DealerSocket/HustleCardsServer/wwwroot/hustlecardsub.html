@@ -2,6 +2,22 @@
 <html>
     <head>
         <link rel ="stylesheet" href = "main.css"/>
+		<script> 
+			function submit(){
+				var location = loca.value;
+				var department = depa.value;
+				var person = pname.value;
+				var reasonBox = reason.value;
+				console.log(location);
+				console.log(department);
+				console.log(person);
+				console.log(reasonBox);
+			}
+			
+			function logout(){
+				document.location.href = "index.html";
+			}
+		</script>
     <title>Hustle Card Submission</title>
     </head>
     <body>
@@ -9,40 +25,44 @@
         <h1>Hustle Card Submission</h1>
         <form action="myform">
             <p>Location</p>
-            <select>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+            <select id="loca">
+                <option value="SLC">Salt Lake City</option>
+                <option value="DR">Draper</option>
+                <option value="RU">Russia</option>
+                <option value="LE">Lehi</option>
             </select>
             <br/>
             <p>Department</p>
-            <select>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+            <select id="depa">
+                <option value="sales">Sales</option>
+                <option value="hr">HR</option>
+                <option value="purchasing">Purchasing</option>
             </select>
             <br/>
             <p>Employee's Name</p>
-            <select>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+            <select id="pname">
+                <option value="bob">Bob</option>
+                <option value="sady">Sady</option>
+                <option value="gerald">Gerald</option>
+                <option value="amanda">Amanda</option>
             </select>
             <br/>
             <form action="/action_page.php">
-                <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
-                <input type="checkbox" name="vehicle" value="Car" > I have a car<br>
-                <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
-                <input type="checkbox" name="vehicle" value="Car" > I have a car<br>
-                <input type="checkbox" name="vehicle" value="Car" > Other<br>
+                <input type="checkbox" id="best" value="Best" > Be Your Best<br>
+                <input type="checkbox" id="achieve" value="Achieve" > Achieve More Together<br>
+                <input type="checkbox" id="think" value="Think" > Think Beyond Your Role<br>
+                <input type="checkbox" id="make" value="Make" > Make The Plane<br>
+                <input type="checkbox" id="serve" value="Serve" > Serve To Win<br>
+				<input type="checkbox" id="happen" value="Happen" > Make It Happen<br>
             </form>
             <br/>
-            <input type="text" name="input" value="">
+			<p>Reason: </p>
+            <input type="text" id="reason" name="input" value="">
             <br/>
-             <input type="submit" value="Submit">
+             <input type="submit" value="Submit" onclick="submit()">
+			 <br /><br />
+			 <input type="button" name="button" value="Logout" onClick="logout()">
+			 
         </form> 
         <p id="response"></p>
     </body>

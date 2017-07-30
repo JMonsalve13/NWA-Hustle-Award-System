@@ -2,6 +2,23 @@
 <html>
     <head>
         <link rel ="stylesheet" href = "main.css"/>
+		<script>
+			function logout(){
+				document.location.href = "index.html";
+			}
+			function submission(){
+				document.location.href = "hustlecardsub.html";
+			}
+			function review(){
+				document.location.href = "HustleReview.html";
+			}
+			function newprize(){
+				document.location.href = "newprize.html";
+			}
+			function awardprize(){
+				document.location.href = "name&prizegen.html";
+			}
+		</script>
     <title>Employee Submission</title>
     </head>
     <body>
@@ -10,19 +27,19 @@
         <form name="myform">
             <br/>
             <br/>
-            <input type="button" name="button" value="Hustle Card Submissions" onClick="sendData(this.form)">
+            <input type="button" name="button" value="Hustle Card Submissions" onClick="submission()">
             <br/>
             <br/>
-             <input type="button" name="button" value="Hustle Card Review" onClick="sendData(this.form)">
+             <input type="button" name="button" value="Hustle Card Review" onClick="review()">
             <br/>
             <br/>
-             <input type="button" name="button" value="Prize Entry" onClick="sendData(this.form)">
+             <input type="button" name="button" value="Prize Entry" onClick="newprize()">
             <br/>
             <br/>
-             <input type="button" name="button" value="Award Prize" onClick="sendData(this.form)">
+             <input type="button" name="button" value="Award Prize" onClick="awardprize()">
             <br/>
             <br/>
-             <input type="button" name="button" value="Logout" onClick="sendData(this.form)">
+             <input type="button" name="button" value="Logout" onClick="logout()">
             <br/>
             <br/>
         </form> 

@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel ="stylesheet" href = "main.css"/>
-    <title>Emplyoee Login</title>
+        <link rel="stylesheet" href="main.css"/>
+		<script>
+		function test(){
+			var username = document.getElementById("username").value;
+			if(username.toLowerCase() == "bob"){
+				document.location.href = "fourprocesschoice.html";
+			}
+		}
+</script>
+		<title>Emplyoee Login</title>
     </head>
     <body>
-<<<<<<< HEAD
         <img src="images/DealerSocket.jpg" width="200"/>
-=======
-        <script>
-
-        </script>
-        <img src="C:\Users\Sapphire Gemini\Desktop\DealerSocket.jpg" />
->>>>>>> ecf1c54a79fc910ef7abb577f20a2cfe7f7b074a
         <h1>Welcome Employee</h1>
         <form action="myform">
             <input id="username" type="text" name="input" value="">
             <br/>
             <input type="text" name="input" value="">
-            <input id="loginBtn" type="button" name="button" value="Login" onClick="sendData(this.form)">
+            <input id="loginBtn" type="button" name="button" value="Login" onclick="test()">
         </form> 
         <p id="response"></p>
     </body>
