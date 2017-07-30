@@ -22,10 +22,10 @@ namespace HustleCardsServer
         /// </summary>
         /// <returns>the collection of selected cards which fulfill the provided query</returns>
         [HttpGet]
-        public IActionResult Get()
+        public JsonResult Get()
         {
             string[] qs = EasyQueary.ConvertQueary(HttpContext.Request.Query, false);
-            return Ok(DB_Operations.GetCards(qs));
+            return Json(DB_Operations.GetCards(qs));
         }
 
         /// <summary>
@@ -48,10 +48,10 @@ namespace HustleCardsServer
         /// </summary>
         /// <returns>the collection of selected cards which fulfill the provided query</returns>
         [HttpPut("{id}")]
-        public IActionResult Put()
+        public JsonResult Put()
         {
             string[] qs = EasyQueary.ConvertQueary(HttpContext.Request.Query, true);
-            return Ok(DB_Operations.GetCards(qs));
+            return Json(DB_Operations.GetCards(qs));
         }
 
         /// <summary>

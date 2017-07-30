@@ -47,10 +47,10 @@ namespace HustleCardsServer.Controllers
         /// </summary>
         /// <returns>the collection of selected Departments which fulfill the provided query</returns>
         [HttpPut("{id}")]
-        public IActionResult Put()
+        public JsonResult Put()
         {
             string[] qs = EasyQueary.ConvertQueary(HttpContext.Request.Query, true);
-            return Ok(DB_Operations.GetDepartments(qs));
+            return Json(DB_Operations.GetDepartments(qs));
         }
 
         /// <summary>
