@@ -6,20 +6,16 @@
 			function submit(){
 				var location = loca.value;
 				var department = depa.value;
-				var person = pname.value;
+				var personR = pname.value;
+				var personG = gname.value;
 				var reasonBox = reason.value;
-				console.log(location);
-				console.log(department);
-				console.log(person);
-				console.log(reasonBox);
 				
 				var xmlHttp = new XMLHttpRequest();
                 xmlHttp.open("POST",
-                    "/api/card/?create=(prizeName=" + nameInput.value +
-                    ",val=" + valueInput.value +
-                    ",picPath=" + imgInput.value +
-                    ",desc=" + descriptionInput.value +
-                    ",isActive=" + activeInput.value+")",
+                    "/api/card/?create=(date=" + Date.now().toString() +
+                    ",personReceiving=" + personR +
+                    ",personGiving=" + personG +
+                    ",reasonForCard=" + reasonBox+")",
                 false);
 			}
 			
@@ -48,8 +44,15 @@
                 <option value="purchasing">Purchasing</option>
             </select>
             <br/>
-            <p>Employee's Name</p>
-            <select id="pname">
+			<p>Giver's Name</p>
+            <select id="gname">
+                <option value="bob">Bob</option>
+                <option value="sady">Sady</option>
+                <option value="gerald">Gerald</option>
+                <option value="amanda">Amanda</option>
+            </select>
+            <p>Reciever's Name</p>
+            <select id="rname">
                 <option value="bob">Bob</option>
                 <option value="sady">Sady</option>
                 <option value="gerald">Gerald</option>
