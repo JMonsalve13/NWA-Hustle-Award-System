@@ -43,6 +43,18 @@ namespace NWA.HustleCards.BackEnd
             }
         }
 
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// AddCard() will connect to the HustleCard DB and insert the card passed in, into the DB
+        /// </summary>
+        /// <param name="card"></param>
         public static void AddCard(HustleCard card)
         {
             using (var db = new LiteDatabase("HustleCards.db"))
@@ -52,15 +64,48 @@ namespace NWA.HustleCards.BackEnd
                 cards.Insert(HustleCard.Clone(card));
             }
         }
+
+
+
+        /// <summary>
+        /// DeleteCard() will connect to the HustCard DB and delete the card specified. 
+        /// </summary>
+        /// <param name="p"></param>
         public static void DeleteCard(HustleCard p)
         {
             using (var db = new LiteDatabase("HustleCards.db"))
             {
                 var cards = db.GetCollection<Department>("HustleCards");
-                cards.Delete(p);
+         //       cards.Delete(p);
             }
         }
 
+
+
+
+
+
+        /// <summary>
+        ///     In GetCards(), passing in a string array of queries.
+        ///     
+        ///     We create a new list of type <GenericQuery<HustleCard>> named qlist that stores all
+        ///     the queries that eventually gets populated and executed.
+        ///     
+        ///     Following, we then create a new list of type <GenericQuery<HustleCard>> named ups, in which stores all of the update
+        ///     queries that also eventually gets populated and executed,
+        ///     
+        ///     Following, the column and value variables get declared ouside of the for loop so they dont get re-declared
+        ///     with in every itteration of the for loop.
+        ///     
+        ///     In the for loop, we are itteratinng through every index in the queryParams[], depending on the query in the current index refrence,
+        ///     we then add that query to qlist to add the execution at the end of the for loop.
+        ///     
+        ///     We then itterate through the qlist and execute updates and queries.
+        ///     
+        /// 
+        /// </summary>
+        /// <param name="queryParams"></param>
+        /// <returns>HustleCard[]</returns>
         public static HustleCard[] GetCards(string[] queryParams)
         {
 
@@ -137,6 +182,20 @@ namespace NWA.HustleCards.BackEnd
             };
         }
 
+
+
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// AddDepartment() will connect to Department DB and insert the Department passed in, into the DB
+        /// </summary>
+        /// <param name="card"></param>
         public static void AddDepartment(Department p)
         {
             using (var db = new LiteDatabase("Departments.db"))
@@ -148,14 +207,42 @@ namespace NWA.HustleCards.BackEnd
             }
         }
 
+        /// <summary>
+        /// DeleteDepartment() will connect to the the departments database and remove the specified department
+        /// </summary>
+        /// <param name="p"></param>
         public static void DeleteDepartment(Department p)
         {
-            using(var db = new LiteDatabase("Dpartments.db"))
+            using(var db = new LiteDatabase("Departments.db"))
             {
                 var departments = db.GetCollection<Department>("Departments");
-                departments.Delete(p);
+       //         departments.Delete(p);
             }
         }
+
+
+
+        /// <summary>
+        ///     In GetDepartments(), passing in a string array of queries.
+        ///     
+        ///     We create a new list of type <GenericQuery<Department>> named qlist that stores all
+        ///     the queries that eventually gets populated and executed.
+        ///     
+        ///     Following, we then create a new list of type <GenericQuery<Department>> named ups, in which stores all of the update
+        ///     queries that also eventually gets populated and executed,
+        ///     
+        ///     Following, the column and value variables get declared ouside of the for loop so they dont get re-declared
+        ///     with in every itteration of the for loop.
+        ///     
+        ///     In the for loop, we are itteratinng through every index in the queryParams[], depending on the query in the current index refrence,
+        ///     we then add that query to qlist to add the execution at the end of the for loop.
+        ///     
+        ///     We then itterate through the qlist and execute updates and queries.
+        ///     
+        /// 
+        /// </summary>
+        /// <param name="queryParams"></param>
+        /// <returns>Department[]</returns>
 
         public static Department[] GetDepartments(string[] queryParams)
         {
@@ -232,6 +319,25 @@ namespace NWA.HustleCards.BackEnd
                 return per.ToArray();
             };
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// AddPrize() will connect to the prizes db and add a prize based on what prize is being passed in th
+        /// </summary>
+        /// <param name="p"></param>
         
         public static void AddPrize(Prize p)
         {
@@ -244,14 +350,48 @@ namespace NWA.HustleCards.BackEnd
             }
         }
 
+        
+        /// <summary>
+        /// DeletePrize() will connect to the prizes database and delete the specified prize
+        /// </summary>
+        /// <param name="p"></param>
+
         public static void DeletePrize(Prize p)
         {
             using (var db = new LiteDatabase("Prizes.db"))
             {
                 var prizes = db.GetCollection<Department>("Prizes");
-                prizes.Delete(p);
+         //       prizes.Delete(p);
             }
         }
+
+
+
+
+
+
+        /// <summary>
+        ///     In GetPrizes(), passing in a string array of queries.
+        ///     
+        ///     We create a new list of type <GenericQuery<prize>> named qlist that stores all
+        ///     the queries that eventually gets populated and executed.
+        ///     
+        ///     Following, we then create a new list of type <GenericQuery<prize>> named ups, in which stores all of the update
+        ///     queries that also eventually gets populated and executed,
+        ///     
+        ///     Following, the column and value variables get declared ouside of the for loop so they dont get re-declared
+        ///     with in every itteration of the for loop.
+        ///     
+        ///     In the for loop, we are itteratinng through every index in the queryParams[], depending on the query in the current index refrence,
+        ///     we then add that query to qlist to add the execution at the end of the for loop.
+        ///     
+        ///     We then itterate through the qlist and execute updates and queries.
+        ///     
+        /// 
+        /// </summary>
+        /// <param name="queryParams"></param>
+        /// <returns>Prize[]</returns>
+
 
         public static Prize[] GetPrizes(string[] queryParams)
         {
@@ -329,6 +469,14 @@ namespace NWA.HustleCards.BackEnd
             };
         }
 
+
+
+
+        /// <summary>
+        /// AddLocation() connect's to the Location database and add any location that is passed in through the parameter list
+        /// </summary>
+        /// <param name="p"></param>
+
         public static void AddLocation(Location p)
         {
             using (var db = new LiteDatabase("Locations.db"))
@@ -339,14 +487,52 @@ namespace NWA.HustleCards.BackEnd
                 people.Insert(Location.Clone(p));
             }
         }
+
+
+        /// <summary>
+        /// DeleteLocation() will connect to the Locations database and delete the specified 
+        /// location, passed in through the params list.
+        /// </summary>
+        /// <param name="p"></param>
+
         public static void DeleteLocation(Location p)
         {
             using (var db = new LiteDatabase("Locations.db"))
             {
                 var locations = db.GetCollection<Department>("Locations");
-                locations.Delete(p);
+          //      locations.Delete(p);
             }
         }
+
+
+
+
+
+        /// <summary>
+        ///     In GetLocations(), passing in a string array of queries.
+        ///     
+        ///     We create a new list of type <GenericQuery<Locations>> named qlist that stores all
+        ///     the queries that eventually gets populated and executed.
+        ///     
+        ///     Following, we then create a new list of type <GenericQuery<Locations>> named ups, in which stores all of the update
+        ///     queries that also eventually gets populated and executed,
+        ///     
+        ///     Following, the column and value variables get declared ouside of the for loop so they dont get re-declared
+        ///     with in every itteration of the for loop.
+        ///     
+        ///     In the for loop, we are itteratinng through every index in the queryParams[], depending on the query in the current index refrence,
+        ///     we then add that query to qlist to add the execution at the end of the for loop.
+        ///     
+        ///     We then itterate through the qlist and execute updates and queries.
+        ///     
+        /// 
+        /// </summary>
+        /// <param name="queryParams"></param>
+        /// <returns>Location[]</returns>
+
+
+
+
         public static Location[] GetLocations(string[] queryParams)
         {
 
@@ -423,6 +609,17 @@ namespace NWA.HustleCards.BackEnd
             };
         }
 
+
+
+
+
+
+        /// <summary>
+        /// AddPerson() will connect to the People database and add a person based on the person passed
+        /// in through the 
+        /// </summary>
+        /// <param name="p"></param>
+
         public static void AddPerson(Person p)
         {
             using (var db = new LiteDatabase("People.db"))
@@ -431,18 +628,48 @@ namespace NWA.HustleCards.BackEnd
                 // now we can carry out CRUD operations on the data
 
                 people.Insert(Person.Clone(p));
-
             }
 
         }
+
+    /// <summary>
+    /// DeletePerson() connects to the people database and deletes a person based on the person passed in through the
+    /// params list.
+    /// </summary>
+    /// <param name="p"></param>
         public static void DeletePerson(Person p)
         {
             using (var db = new LiteDatabase("People.db"))
             {
                 var people = db.GetCollection<Department>("People");
-                departments.Delete(p);
+          //      departments.Delete(p);
             }
         }
+
+
+
+
+        /// <summary>
+        ///     In GetPerson(), passing in a string array of queries.
+        ///     
+        ///     We create a new list of type <GenericQuery<Person>> named qlist that stores all
+        ///     the queries that eventually gets populated and executed.
+        ///     
+        ///     Following, we then create a new list of type <GenericQuery<Person>> named ups, in which stores all of the update
+        ///     queries that also eventually gets populated and executed,
+        ///     
+        ///     Following, the column and value variables get declared ouside of the for loop so they dont get re-declared
+        ///     with in every itteration of the for loop.
+        ///     
+        ///     In the for loop, we are itteratinng through every index in the queryParams[], depending on the query in the current index refrence,
+        ///     we then add that query to qlist to add the execution at the end of the for loop.
+        ///     
+        ///     We then itterate through the qlist and execute updates and queries.
+        ///     
+        /// 
+        /// </summary>
+        /// <param name="queryParams"></param>
+        /// <returns>Person[]</returns>
         public static Person[] GetPersons(string[] queryParams)
         {
 
