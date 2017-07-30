@@ -14,7 +14,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Content Include="wwwroot\AcceptDeny.html" />
+    <Content Include="wwwroot\activelist.html" />
+    <Content Include="wwwroot\confirm.html" />
+    <Content Include="wwwroot\CSS\main.css" />
+    <Content Include="wwwroot\fourprocesschoice.html" />
+    <Content Include="wwwroot\hustlecardsub.html" />
+    <Content Include="wwwroot\HustleReview.html" />
+    <Content Include="wwwroot\index.html" />
+    <Content Include="wwwroot\name&amp;prizegen.html" />
+    <Content Include="wwwroot\newprize.html" />
+    <Content Include="wwwroot\Thankyou.html" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
@@ -28,6 +38,10 @@
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary2\BackEnd.csproj" />
     <ProjectReference Include="..\MiscellaneousAssistantFunctions\MiscellaneousAssistantFunctions.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\JS\" />
+    <Folder Include="wwwroot\Resources\" />
   </ItemGroup>
 
 </Project>
