@@ -245,3 +245,5 @@ DealerSocket/HustleCardsServer/wwwroot/inline.bundle.js.map
 DealerSocket/HustleCardsServer/wwwroot/main.bundle.js.map
 *.map
 DealerSocket/HustleCardsServer/wwwroot/styles.bundle.js
+DealerSocket/HustleCardsServer/wwwroot/index.html
+DealerSocket/HustleCardsServer/wwwroot/AcceptDeny.html
