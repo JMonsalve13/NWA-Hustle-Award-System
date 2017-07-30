@@ -2,16 +2,63 @@
 <html>
     <head>
         <link rel ="stylesheet" href = "main.css"/>
-    <title>Emplyoee Login</title>
+    <title>New Prize Creator</title>
     </head>
     <body>
+        <script>
+            function buildPrize() {
+                var nameInput = document.getElementById("name");
+                var imgInput = document.getElementById("imgpth");
+                var descriptionInput = document.getElementById("description");
+                var valueInput = document.getElementById("value");
+                var activeInput = document.getElementById("active");
+
+                var response = document.getElementById("response");
+
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("POST",
+                    "/api/prize/?create=(prizeName=" + nameInput.value +
+                    ",val=" + valueInput.value +
+                    ",picPath=" + imgInput.value +
+                    ",desc=" + descriptionInput.value +
+                    ",isActive=" + activeInput.value+")",
+                false); // false for synchronous request
+                xmlHttp.send(null);
+                response.innerHTML = xmlHttp.responseText;
+            }
+        </script>
         <img src="C:\Users\Sapphire Gemini\Desktop\DealerSocket.jpg" />
-        <h1>Welcome Employee</h1>
+        <h1>New Prize</h1>
         <form action="myform">
-            <input type="text" name="input" value="">
+              <p>Prize Name</p>
+            <input id="name" type="text" name="input" value="">
             <br/>
-            <input type="text" name="input" value="">
-            <input type="button" name="button" value="Login" onClick="sendData(this.form)">
+            <br/>
+            <p>Image</p>
+            <input id="imgpth" type="text" name="input" value="">
+            <br/>
+            <br/>
+            <p>Descrpition</p>
+            <input id="description" type="text" name="input" value="">
+            <br/>
+            <br/>
+            <p>Prize Value</p>
+            <input id="value" type="number" name="input" value="">
+            <br/>
+            <br/>
+            <p>Activation</p>
+            <label class="switch">
+                <input id="active" type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <br/>
+            <br/>
+            <input type="button" name="button" value="Accept" onClick="buildPrize()">
+            <br/>
+            <br/> 
+            <input type="button" name="button" value="Prize List" onClick="window.location='http://www.localhost:5000/activelist.html';">
+            <br/>
+            <br/>
         </form> 
         <p id="response"></p>
     </body>

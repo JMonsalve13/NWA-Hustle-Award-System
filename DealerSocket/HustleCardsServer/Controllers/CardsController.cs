@@ -35,7 +35,7 @@ namespace HustleCardsServer
         [HttpPost]
         public IActionResult Post()
         {
-            HustleCard p = default(HustleCard);
+            HustleCard p = new HustleCard();
             string[] quearyParams = HttpContext.Request.Query["create"].ToString().Split('(', ')', ',');
             p = EasyQueary.ReflectionUpdate(p, quearyParams);
             DB_Operations.AddCard(p);

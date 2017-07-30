@@ -34,7 +34,7 @@ namespace HustleCardsServer.Controllers
         [HttpPost]
         public IActionResult Post()
         {
-            Department p = default(Department);
+            Department p = new Department();
             string[] quearyParams = HttpContext.Request.Query["create"].ToString().Split('(', ')', ',');
             p = EasyQueary.ReflectionUpdate(p, quearyParams);
             DB_Operations.AddDepartment(p);

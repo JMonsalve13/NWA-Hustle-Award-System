@@ -51,8 +51,8 @@ namespace NWA.HustleCards.BackEnd
         /// <summary>
         /// The department in which this person works
         /// </summary>
-        private Department department;
-        public Department Department
+        private string department;
+        public string Department
         {
             get { return department; }
             set
@@ -65,8 +65,8 @@ namespace NWA.HustleCards.BackEnd
         /// <summary>
         /// The location where this person works
         /// </summary>
-        private Location location;
-        public Location Location
+        private string location;
+        public string Location
         {
             get { return location; }
             set
