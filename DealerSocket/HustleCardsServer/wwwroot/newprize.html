@@ -26,6 +26,9 @@
                 xmlHttp.send(null);
                 response.innerHTML = xmlHttp.responseText;
             }
+			function logout(){
+				document.location.href = "index.html";
+			}
         </script>
         <img src="C:\Users\Sapphire Gemini\Desktop\DealerSocket.jpg" />
         <h1>New Prize</h1>
@@ -59,6 +62,7 @@
             <input type="button" name="button" value="Prize List" onClick="window.location='http://www.localhost:5000/activelist.html';">
             <br/>
             <br/>
+			 <input type="button" name="button" value="Logout" onClick="logout()">
         </form> 
         <p id="response"></p>
     </body>

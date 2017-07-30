@@ -2,6 +2,18 @@
 <html>
     <head>
         <link rel ="stylesheet" href = "main.css"/>
+		<script>
+			function logout(){
+				document.location.href = "index.html";
+			}
+			function generatePrize(){
+				var randNum = Math.floor((Math.random() * 10) + 1);
+				document.getElementById("person").innerHTML = "bob won";//get random person and prize
+			}
+			function done(){
+				document.location.href = "fourprocesschoice.html";
+			}
+		</script>
     <title>Prize Generater</title>
     </head>
     <body>
@@ -10,14 +22,19 @@
         
         <div id="box3">
         <p>Employee Hustle Card</p>
+		
+		<p id="person"></p>
         </div>
         <form action="myform">
-            <input type="button" name="button" value="Employee Prize Selector" onClick="sendData(this.form)">
+            <input type="button" name="button" value="Employee Prize Selector" onClick="generatePrize()">
             <br/>
              <input type="button" name="button" value="Yes" onClick="sendData(this.form)">
             <br/>
-             <input type="button" name="button" value="Done" onClick="sendData(this.form)">
+             <input type="button" name="button" value="Done" onClick="done()">
+			 <br/>
+             <input type="button" name="button" value="Logout" onClick="logout()">
         </form> 
+		
         <p id="response"></p>
     </body>
     <footer>&#169; 2017 DealerSocket.Attn: by using this website you agree to these Terms and conditions.</footer>
