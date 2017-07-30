@@ -2,16 +2,41 @@
 <html>
     <head>
         <link rel ="stylesheet" href = "main.css"/>
-    <title>Emplyoee Login</title>
+    <title>New Prize Creator</title>
     </head>
     <body>
         <img src="C:\Users\Sapphire Gemini\Desktop\DealerSocket.jpg" />
-        <h1>Welcome Employee</h1>
+        <h1>New Prize</h1>
         <form action="myform">
+              <p>Prize Name</p>
             <input type="text" name="input" value="">
             <br/>
+            <br/>
+            <p>Image</p>
             <input type="text" name="input" value="">
-            <input type="button" name="button" value="Login" onClick="sendData(this.form)">
+            <br/>
+            <br/>
+            <p>Descrpition</p>
+            <input type="text" name="input" value="">
+            <br/>
+            <br/>
+            <p>Prize Value</p>
+            <input type="text" name="input" value="">
+            <br/>
+            <br/>
+            <p>Activation</p>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <br/>
+            <br/>
+            <input type="button" name="button" value="Accept" onClick="sendData(this.form)">
+            <br/>
+            <br/> 
+            <input type="button" name="button" value="Prize List" onClick="sendData(this.form)">
+            <br/>
+            <br/>
         </form> 
         <p id="response"></p>
     </body>
